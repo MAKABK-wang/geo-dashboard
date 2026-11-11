@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Build the static, searchable GEO dashboard from data/geo-report.json.
 
@@ -34,12 +34,11 @@ TEMPLATE_FILE = ROOT / "templates" / "index.html"
 
 NAV_ITEMS = [
     ("overview", "概览"),
+    ("insights", "洞察"),
     ("gap", "检测"),
     ("brands", "品牌"),
     ("audit", "审计"),
-    ("assets", "资产"),
     ("roadmap", "路线"),
-    ("channels", "渠道"),
     ("faq", "FAQ"),
     ("method", "数据"),
 ]
@@ -365,18 +364,65 @@ def render_asset_cards(data: dict) -> str:
     return "\n".join(cards)
 
 
+def render_insights(data: dict) -> str:
+    items = data.get("insights") or []
+    cards = []
+    for index, item in enumerate(items, start=1):
+        tone = item.get("tone", "accent")
+        cards.append(
+            f'<article class="insight-card tone-{attr(tone)}" id="insight-{index}" data-search-item '
+            f'data-search-title="{attr(item["tag"] + "：" + item["title"])}" data-search-type="关键发现" '
+            f'data-search-section="关键发现">\n'
+            f'  <div class="insight-top"><span class="insight-tag">{esc(item["tag"])}</span>'
+            f'<span class="insight-index">{index:02d}</span></div>\n'
+            f'  <div class="insight-num">{esc(item["number"])}</div>\n'
+            f'  <h3>{esc(item["title"])}</h3>\n'
+            f'  <p>{esc(item["desc"])}</p>\n'
+            f'</article>'
+        )
+    return "\n".join(cards)
+
+
+def render_frequency(data: dict) -> tuple[str, str, str]:
+    freq = data.get("competitor_frequency") or {}
+    items = freq.get("items") or []
+    if not items:
+        return "", "0", ""
+    peak = max(item["count"] for item in items)
+    rows = []
+    for item in items:
+        percent = max(6.0, item["count"] / peak * 100)
+        rows.append(
+            f'<div class="freq-row" id="freq-{attr(item["brand"])}" data-search-item '
+            f'data-search-title="{attr(item["brand"] + "：出现 " + str(item["count"]) + " 次")}" '
+            f'data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">\n'
+            f'  <span class="freq-name">{esc(item["brand"])}</span>\n'
+            f'  <span class="freq-track"><span class="freq-bar" style="width:{percent:.0f}%"></span></span>\n'
+            f'  <span class="freq-count">{item["count"]}<small>次</small></span>\n'
+            f'  <span class="freq-q">{esc(" · ".join(item["questions"]))}</span>\n'
+            f'</div>'
+        )
+    return "\n".join(rows), str(freq.get("unique_brands", len(items))), esc(freq.get("note", ""))
+
+
 def render_roadmap(data: dict) -> str:
+    labels = {"done": "已完成", "doing": "进行中", "todo": "未开始"}
     items = []
     for step in data["roadmap"]:
+        status = step.get("status", "todo")
+        note = step.get("progress_note") or ""
+        note_html = f'\n    <p class="road-progress-note">{esc(note)}</p>' if note else ""
         items.append(
-            f'<div class="road-item" id="roadmap-{attr(step["id"].lower())}" data-search-item '
-            f'data-search-title="{attr(step["id"] + " " + step["title"] + "：" + step["desc"])}" '
+            f'<div class="road-item status-{attr(status)}" id="roadmap-{attr(step["id"].lower())}" data-search-item '
+            f'data-search-title="{attr(step["id"] + " " + step["title"] + "（" + labels.get(status, "未开始") + "）：" + step["desc"])}" '
             f'data-search-type="改造步骤" data-search-section="GEO 改造路线图">\n'
             f'  <div class="road-marker" aria-hidden="true">{esc(step["id"])}</div>\n'
             f'  <div class="road-body">\n'
-            f'    <div class="road-top"><h3>{esc(step["title"])}</h3><span class="road-phase">{esc(step["phase"])}</span></div>\n'
+            f'    <div class="road-top"><h3>{esc(step["title"])}</h3>'
+            f'<span class="road-status status-{attr(status)}">{labels.get(status, "未开始")}</span>'
+            f'<span class="road-phase">{esc(step["phase"])}</span></div>\n'
             f'    <p>{esc(step["desc"])}</p>\n'
-            f'    <p class="road-signal"><span>验收信号</span>{esc(step["signal"])}</p>\n'
+            f'    <p class="road-signal"><span>验收信号</span>{esc(step["signal"])}</p>{note_html}\n'
             f'  </div>\n'
             f'</div>'
         )
@@ -643,7 +689,12 @@ def render_markdown(data: dict, base_url: str) -> str:
     lines.append(f"- 竞品被推荐：{metrics['brands_total']} 家次，平均每问 {metrics['brands_avg']:.1f} 家")
     lines.append(f"- 内容资产：{metrics['asset_count']} 项（含 {metrics['faq_count']} 条 FAQ）")
     lines.append("")
-    lines.append("## 一、AI 搜索检测结果")
+    lines.append("## 一、关键发现")
+    lines.append("")
+    for item in data.get("insights", []):
+        lines.append(f"- **{item['tag']} · {item['number']} {item['title']}**：{item['desc']}")
+    lines.append("")
+    lines.append("## 二、AI 搜索检测结果")
     lines.append("")
     lines.append("| # | 问题 | AI 推荐品牌 | 合一自动化 |")
     lines.append("|---|---|---|---|")
@@ -662,7 +713,7 @@ def render_markdown(data: dict, base_url: str) -> str:
         lines.append("")
         lines.append(query["answer"])
         lines.append("")
-    lines.append("## 二、站点机器可读性审计")
+    lines.append("## 三、站点机器可读性审计")
     lines.append("")
     lines.append("| 检查项 | 状态 | 现状 | 修复建议 |")
     lines.append("|---|---|---|---|")
@@ -672,17 +723,17 @@ def render_markdown(data: dict, base_url: str) -> str:
     lines.append("")
     lines.append(f"> {data['audit']['summary']}")
     lines.append("")
-    lines.append("## 三、已产出的 GEO 内容资产")
+    lines.append("## 四、已产出的 GEO 内容资产")
     lines.append("")
     for asset in data["assets"]:
         lines.append(f"- **{asset['title']}**（{asset['tag']}）：{asset['desc']}")
     lines.append("")
-    lines.append("## 四、改造路线图")
+    lines.append("## 五、改造路线图")
     lines.append("")
     for step in data["roadmap"]:
         lines.append(f"- **{step['id']} · {step['title']}**（{step['phase']}）：{step['desc']} 验收信号：{step['signal']}")
     lines.append("")
-    lines.append("## 五、国内 AI 检索地图")
+    lines.append("## 六、国内 AI 检索地图")
     lines.append("")
     lines.append("| 国内 AI | 背后检索源 | 优先投放渠道 | 见效周期 |")
     lines.append("|---|---|---|---|")
@@ -693,12 +744,12 @@ def render_markdown(data: dict, base_url: str) -> str:
     lines.append("")
     lines.append(f"> {data['insight']}")
     lines.append("")
-    lines.append("## 六、现状警示")
+    lines.append("## 七、现状警示")
     lines.append("")
     for risk in data["risks"]:
         lines.append(f"- **{risk['title']}**（风险 {risk['severity']}）：{risk['desc']}")
     lines.append("")
-    lines.append("## 七、FAQ 知识库")
+    lines.append("## 八、FAQ 知识库")
     lines.append("")
     for category in data["faq"]["categories"]:
         lines.append(f"### {category['name']}")
@@ -710,7 +761,7 @@ def render_markdown(data: dict, base_url: str) -> str:
             lines.append("")
             lines.append(item["a"])
             lines.append("")
-    lines.append("## 八、方法与局限")
+    lines.append("## 九、方法与局限")
     lines.append("")
     lines.append("| 指标 | 判定方式 | 本次结果 |")
     lines.append("|---|---|---|")
@@ -727,7 +778,7 @@ def render_markdown(data: dict, base_url: str) -> str:
     for item in data["method"]["limitations"]:
         lines.append(f"- {item}")
     lines.append("")
-    lines.append("## 九、引用")
+    lines.append("## 十、引用")
     lines.append("")
     lines.append("```text")
     lines.append(data["method"]["citation"]["text"].replace("{URL}", page_url))
@@ -737,7 +788,7 @@ def render_markdown(data: dict, base_url: str) -> str:
     lines.append(data["method"]["citation"]["bibtex"].replace("{URL}", page_url))
     lines.append("```")
     lines.append("")
-    lines.append("## 十、建议与修订")
+    lines.append("## 十一、建议与修订")
     lines.append("")
     lines.append("任何人均可提交数据修正、内容补充或体验建议。建议进入审核队列，采纳后直接更新数据、重新构建并记录。")
     lines.append("")
@@ -901,6 +952,11 @@ def render_page(data: dict, base_url: str, files: dict[str, str]) -> str:
     accepted = load_accepted_suggestions()
     accepted_items = accepted.get("items", [])
     repo_url = (site.get("repo_url") or "").strip()
+    freq_rows, freq_brands, freq_note = render_frequency(data)
+    roadmap = data["roadmap"]
+    roadmap_done = sum(1 for step in roadmap if step.get("status") == "done")
+    roadmap_total = len(roadmap)
+    roadmap_percent = round(roadmap_done / roadmap_total * 100) if roadmap_total else 0
 
     replacements = {
         "SITE_TITLE": esc(site["title"]),
@@ -922,6 +978,13 @@ def render_page(data: dict, base_url: str, files: dict[str, str]) -> str:
         "QUOTE": esc(data["hero"]["quote"]),
         "QUOTE_QUESTION": "1",
         "KPI_CARDS": render_kpis(data, metrics),
+        "INSIGHT_CARDS": render_insights(data),
+        "FREQ_ROWS": freq_rows,
+        "FREQ_BRANDS": freq_brands,
+        "FREQ_NOTE": freq_note,
+        "ROADMAP_DONE": str(roadmap_done),
+        "ROADMAP_TOTAL": str(roadmap_total),
+        "ROADMAP_PERCENT": str(roadmap_percent),
         "GAP_ROWS": render_gap_rows(data),
         "ANSWER_ITEMS": render_answers(data),
         "COMPETITOR_ROWS": render_competitor_rows(data),

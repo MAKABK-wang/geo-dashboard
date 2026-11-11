@@ -1032,6 +1032,227 @@ h1 {
   margin-top: 84px;
 }
 
+/* ------------------------------------------------------------ insights ---- */
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.insight-card {
+  position: relative;
+  padding: 18px 18px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.insight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--accent);
+}
+
+.insight-card.tone-danger::before { background: var(--danger); }
+.insight-card.tone-warn::before { background: var(--warn); }
+.insight-card.tone-success::before { background: var(--success); }
+
+.insight-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
+.insight-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.insight-tag {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  color: var(--text-3);
+}
+
+.insight-card.tone-danger .insight-tag { color: var(--danger); background: var(--danger-soft); }
+.insight-card.tone-warn .insight-tag { color: var(--warn); background: var(--warn-soft); }
+.insight-card.tone-success .insight-tag { color: var(--success); background: var(--success-soft); }
+
+.insight-index {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-3);
+}
+
+.insight-num {
+  font-size: 34px;
+  line-height: 1.05;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.insight-card.tone-danger .insight-num { color: var(--danger); }
+.insight-card.tone-warn .insight-num { color: var(--warn); }
+.insight-card.tone-success .insight-num { color: var(--success); }
+
+.insight-card h3 {
+  margin: 0 0 7px;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.insight-card p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--text-3);
+}
+
+/* ------------------------------------------------- competitor frequency --- */
+.freq-card {
+  margin-top: 14px;
+  padding: 20px 22px 16px;
+}
+
+.freq-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.freq-head .card-title {
+  margin-bottom: 4px;
+}
+
+.freq-sub {
+  margin: 0;
+  max-width: 680px;
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: var(--text-3);
+}
+
+.freq-total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.25;
+  flex: none;
+}
+
+.freq-total b {
+  font-size: 24px;
+  font-weight: 750;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.freq-total span {
+  font-size: 10.5px;
+  color: var(--text-3);
+}
+
+.freq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.freq-row {
+  display: grid;
+  grid-template-columns: 120px minmax(80px, 1fr) 52px minmax(150px, 1.1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.freq-name {
+  font-size: 12.5px;
+  color: var(--text);
+  font-weight: 550;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.freq-track {
+  height: 8px;
+  border-radius: 99px;
+  background: var(--track);
+  overflow: hidden;
+}
+
+.freq-bar {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #4676ff, #7fa7ff);
+  box-shadow: 0 2px 8px -3px rgba(70, 118, 255, 0.9);
+}
+
+.freq-count {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.freq-count small {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-3);
+  margin-left: 1px;
+}
+
+.freq-q {
+  font-size: 10.5px;
+  color: var(--text-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.freq-foot {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 14px;
+  padding-top: 13px;
+  border-top: 1px dashed var(--border);
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+.freq-zero-dot {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--danger);
+  border-radius: 50%;
+  color: var(--danger);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  flex: none;
+}
+
 .section-head {
   display: flex;
   align-items: flex-end;
@@ -1796,6 +2017,84 @@ a.asset-card:hover {
   align-items: baseline;
   gap: 12px;
   justify-content: space-between;
+}
+
+.road-status {
+  flex: none;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  padding: 1px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.road-status.status-done {
+  color: var(--success);
+  background: var(--success-soft);
+}
+
+.road-status.status-doing {
+  color: var(--warn);
+  background: var(--warn-soft);
+}
+
+.road-status.status-todo {
+  color: var(--text-3);
+  background: var(--surface-3);
+}
+
+.road-item.status-done .road-marker {
+  color: var(--success);
+  border-color: color-mix(in srgb, var(--success) 55%, var(--border));
+  background: var(--success-soft);
+}
+
+.road-item.status-doing .road-marker {
+  color: var(--warn);
+  border-color: color-mix(in srgb, var(--warn) 55%, var(--border));
+  background: var(--warn-soft);
+}
+
+.road-progress-note {
+  display: flex;
+  gap: 8px;
+  margin: 7px 0 0 !important;
+  padding: 7px 10px;
+  border-radius: 7px;
+  background: var(--surface-2);
+  font-size: 11.5px !important;
+  line-height: 1.65 !important;
+  color: var(--text-3) !important;
+}
+
+.roadmap-progress {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.roadmap-progress-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--track);
+  overflow: hidden;
+}
+
+.roadmap-progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--success), #6ee7b7);
+  transition: width 0.6s ease;
+}
+
+.roadmap-progress-label {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-3);
 }
 
 .road-top h3 {
@@ -3015,6 +3314,10 @@ tr.is-flash {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .insight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .asset-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3299,6 +3602,27 @@ tr.is-flash {
 
   .kpi-grid {
     grid-template-columns: 1fr;
+  }
+
+  .insight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .freq-row {
+    grid-template-columns: 96px minmax(0, 1fr) 44px;
+    grid-template-areas:
+      "name track count"
+      "q q q";
+    gap: 6px 10px;
+  }
+
+  .freq-name { grid-area: name; }
+  .freq-track { grid-area: track; }
+  .freq-count { grid-area: count; text-align: right; }
+  .freq-q {
+    grid-area: q;
+    font-size: 10px;
+    padding-left: 2px;
   }
 
   .kpi-value {

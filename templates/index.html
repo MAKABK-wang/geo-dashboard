@@ -172,10 +172,24 @@
       </div>
     </section>
 
+    <section class="section" id="insights" data-section-label="关键发现">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">01 / INSIGHTS</p>
+          <h2>关键发现</h2>
+          <p class="section-desc">从 5 个问题的原始回答中提炼四件事：问题出在哪、竞品靠什么赢、最便宜的修复是什么、手里已有多少弹药。</p>
+        </div>
+        <div class="section-stat"><b>4</b><span>条核心结论</span></div>
+      </div>
+      <div class="insight-grid">
+        {{INSIGHT_CARDS}}
+      </div>
+    </section>
+
     <section class="section" id="gap" data-section-label="AI 搜索检测结果">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">01 / GAP</p>
+          <p class="kicker">02 / GAP</p>
           <h2>AI 搜索检测结果</h2>
           <p class="section-desc">对 5 个核心采购问题逐题提问，统计 AI 首轮回答中出现的品牌。每个方块代表 1 个被推荐的竞品，合一每次都是 0。</p>
         </div>
@@ -204,7 +218,7 @@
     <section class="section" id="brands" data-section-label="AI 实际推荐了谁">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">02 / BRANDS</p>
+          <p class="kicker">03 / BRANDS</p>
           <h2>AI 实际推荐了谁</h2>
           <p class="section-desc">按问题汇总 AI 回答中出现的品牌，均为厂商示例，不是排名。点击「原回答」可查看完整记录。</p>
         </div>
@@ -223,12 +237,31 @@
           </table>
         </div>
       </div>
+
+      <div class="freq-card card">
+        <div class="freq-head">
+          <div>
+            <h3 class="card-title">竞品出现频次</h3>
+            <p class="freq-sub">{{FREQ_NOTE}}</p>
+          </div>
+          <div class="freq-total">
+            <b>{{FREQ_BRANDS}}</b><span>个独立品牌 · {{TOTAL_BRANDS}} 次推荐</span>
+          </div>
+        </div>
+        <div class="freq-list">
+          {{FREQ_ROWS}}
+        </div>
+        <div class="freq-foot">
+          <span class="freq-zero-dot" aria-hidden="true">0</span>
+          <span>合一自动化：<b class="danger">0 次</b> —— 在所有问题中都不存在</span>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="audit" data-section-label="站点机器可读性审计">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">03 / AUDIT</p>
+          <p class="kicker">04 / AUDIT</p>
           <h2>站点机器可读性审计</h2>
           <p class="section-desc">网站允许 AI 抓取，但缺少让 AI 读懂、引用和推荐的结构化信息。6 项检查中通过 2 项。</p>
         </div>
@@ -246,7 +279,7 @@
     <section class="section" id="assets" data-section-label="GEO 内容资产">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">04 / ASSETS</p>
+          <p class="kicker">05 / ASSETS</p>
           <h2>已产出的 GEO 内容资产</h2>
           <p class="section-desc">方法论、内容与工具。带链接的资产可直接在公开站点或仓库中获取。</p>
         </div>
@@ -260,11 +293,15 @@
     <section class="section" id="roadmap" data-section-label="GEO 改造路线图">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">05 / ROADMAP</p>
+          <p class="kicker">06 / ROADMAP</p>
           <h2>改造路线图</h2>
           <p class="section-desc">按投入产出比排序的五步计划，每一步都给出可验证的信号，而不是“持续优化”这类空话。</p>
         </div>
-        <div class="section-stat"><b>5</b><span>个优先级</span></div>
+        <div class="section-stat"><b>{{ROADMAP_DONE}}</b><span>/ {{ROADMAP_TOTAL}} 步已完成</span></div>
+      </div>
+      <div class="roadmap-progress" role="img" aria-label="路线图完成度 {{ROADMAP_PERCENT}}%">
+        <div class="roadmap-progress-bar"><span style="width:{{ROADMAP_PERCENT}}%"></span></div>
+        <span class="roadmap-progress-label">完成度 {{ROADMAP_PERCENT}}%</span>
       </div>
       <div class="roadmap">
         {{ROADMAP_ITEMS}}
@@ -274,7 +311,7 @@
     <section class="section" id="channels" data-section-label="国内 AI 检索地图">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">06 / CHANNELS</p>
+          <p class="kicker">07 / CHANNELS</p>
           <h2>国内 AI 检索地图</h2>
           <p class="section-desc">国内 AI 不是共用一个检索池，而是各自绑定自家搜索引擎——投放渠道必须跟着检索源走。</p>
         </div>
@@ -302,7 +339,7 @@
     <section class="section" id="risks" data-section-label="现状警示">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">07 / RISKS</p>
+          <p class="kicker">08 / RISKS</p>
           <h2>现状警示</h2>
           <p class="section-desc">内容存在不等于被采信。以下三处是当前最明显的结构性缺口。</p>
         </div>
@@ -316,7 +353,7 @@
     <section class="section" id="faq" data-section-label="FAQ 知识库">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">08 / FAQ</p>
+          <p class="kicker">09 / FAQ</p>
           <h2>FAQ 知识库</h2>
           <p class="section-desc">30 条问答覆盖三大产品线与锂电追溯场景，全部可展开、可检索、可复制。FAQ 是 AI 最容易检索和引用的内容形态。</p>
         </div>
@@ -340,7 +377,7 @@
     <section class="section" id="method" data-section-label="方法、许可与数据">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">09 / METHOD &amp; DATA</p>
+          <p class="kicker">10 / METHOD &amp; DATA</p>
           <h2>方法、许可与数据</h2>
           <p class="section-desc">指标如何计算、样本如何采集、可以怎么引用，以及这次快照的局限。所有原始材料都以开放格式提供。</p>
         </div>
@@ -412,7 +449,7 @@
     <section class="section" id="feedback" data-section-label="建议与修订">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">10 / FEEDBACK</p>
+          <p class="kicker">11 / FEEDBACK</p>
           <h2>建议与修订</h2>
           <p class="section-desc">任何人都可以指出数据错误、补充内容或提出体验改进。建议进入审核队列，由维护者与 AI 助手评估；采纳后直接修改数据、重新构建并记录在这里。</p>
         </div>

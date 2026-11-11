@@ -365,12 +365,11 @@
     </a>
     <nav class="site-nav" aria-label="章节导航">
       <a href="#overview" data-nav>概览</a>
+<a href="#insights" data-nav>洞察</a>
 <a href="#gap" data-nav>检测</a>
 <a href="#brands" data-nav>品牌</a>
 <a href="#audit" data-nav>审计</a>
-<a href="#assets" data-nav>资产</a>
 <a href="#roadmap" data-nav>路线</a>
-<a href="#channels" data-nav>渠道</a>
 <a href="#faq" data-nav>FAQ</a>
 <a href="#method" data-nav>数据</a>
     </nav>
@@ -404,12 +403,11 @@
   </div>
   <nav class="mobile-nav" id="mobileNav" aria-label="章节导航" hidden>
     <a href="#overview">概览</a>
+<a href="#insights">洞察</a>
 <a href="#gap">检测</a>
 <a href="#brands">品牌</a>
 <a href="#audit">审计</a>
-<a href="#assets">资产</a>
 <a href="#roadmap">路线</a>
-<a href="#channels">渠道</a>
 <a href="#faq">FAQ</a>
 <a href="#method">数据</a>
 <a href="#feedback">建议</a>
@@ -435,7 +433,7 @@
         </div>
         <ul class="hero-meta">
           <li><span>数据采集</span><b>2026-10-31</b></li>
-          <li><span>公开版本</span><b>v1.0.0</b></li>
+          <li><span>公开版本</span><b>v1.1.0</b></li>
           <li><span>数据许可</span><b>CC BY 4.0</b></li>
           <li><span>代码许可</span><b>MIT</b></li>
         </ul>
@@ -487,10 +485,47 @@
       </div>
     </section>
 
+    <section class="section" id="insights" data-section-label="关键发现">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">01 / INSIGHTS</p>
+          <h2>关键发现</h2>
+          <p class="section-desc">从 5 个问题的原始回答中提炼四件事：问题出在哪、竞品靠什么赢、最便宜的修复是什么、手里已有多少弹药。</p>
+        </div>
+        <div class="section-stat"><b>4</b><span>条核心结论</span></div>
+      </div>
+      <div class="insight-grid">
+        <article class="insight-card tone-danger" id="insight-1" data-search-item data-search-title="实体缺失：品牌在 AI 检索池里不存在" data-search-type="关键发现" data-search-section="关键发现">
+  <div class="insight-top"><span class="insight-tag">实体缺失</span><span class="insight-index">01</span></div>
+  <div class="insight-num">0 / 5</div>
+  <h3>品牌在 AI 检索池里不存在</h3>
+  <p>5 个核心问题,AI 推荐了 29 家次竞品,合一自动化一次都没出现。不是回答有误,而是检索池里缺少“合一 + 工业视觉”的强关联信息。</p>
+</article>
+<article class="insight-card tone-warn" id="insight-2" data-search-item data-search-title="竞品打法：竞品靠“跨场景重复”建立权威" data-search-type="关键发现" data-search-section="关键发现">
+  <div class="insight-top"><span class="insight-tag">竞品打法</span><span class="insight-index">02</span></div>
+  <div class="insight-num">83%</div>
+  <h3>竞品靠“跨场景重复”建立权威</h3>
+  <p>海康机器人、奥普特在多个问题中被反复推荐,说明 AI 更信任“在多类场景下都被提到”的品牌,而非只在单一品类出现过一次的品牌。</p>
+</article>
+<article class="insight-card tone-warn" id="insight-3" data-search-item data-search-title="可快速修复：技术地基只差 4 项" data-search-type="关键发现" data-search-section="关键发现">
+  <div class="insight-top"><span class="insight-tag">可快速修复</span><span class="insight-index">03</span></div>
+  <div class="insight-num">2 / 6</div>
+  <h3>技术地基只差 4 项</h3>
+  <p>robots 与 sitemap 已就绪,缺的是 H1、Schema、llms.txt 与知识型内容。这 4 项都是低成本、可在一两周内补齐的确定性动作。</p>
+</article>
+<article class="insight-card tone-success" id="insight-4" data-search-item data-search-title="资产就绪：内容弹药已经就位" data-search-type="关键发现" data-search-section="关键发现">
+  <div class="insight-top"><span class="insight-tag">资产就绪</span><span class="insight-index">04</span></div>
+  <div class="insight-num">30 条</div>
+  <h3>内容弹药已经就位</h3>
+  <p>30 条 FAQ、锂电全工序方案、竞品打法分析都已产出并公开在本页。缺的不是内容,而是把这些内容放到 AI 会采信的地方。</p>
+</article>
+      </div>
+    </section>
+
     <section class="section" id="gap" data-section-label="AI 搜索检测结果">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">01 / GAP</p>
+          <p class="kicker">02 / GAP</p>
           <h2>AI 搜索检测结果</h2>
           <p class="section-desc">对 5 个核心采购问题逐题提问，统计 AI 首轮回答中出现的品牌。每个方块代表 1 个被推荐的竞品，合一每次都是 0。</p>
         </div>
@@ -606,7 +641,7 @@
     <section class="section" id="brands" data-section-label="AI 实际推荐了谁">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">02 / BRANDS</p>
+          <p class="kicker">03 / BRANDS</p>
           <h2>AI 实际推荐了谁</h2>
           <p class="section-desc">按问题汇总 AI 回答中出现的品牌，均为厂商示例，不是排名。点击「原回答」可查看完整记录。</p>
         </div>
@@ -654,12 +689,138 @@
           </table>
         </div>
       </div>
+
+      <div class="freq-card card">
+        <div class="freq-head">
+          <div>
+            <h3 class="card-title">竞品出现频次</h3>
+            <p class="freq-sub">同一品牌在多个问题的回答中被反复推荐,说明其已形成跨场景的“品牌实体”关联;合一为 0 次。</p>
+          </div>
+          <div class="freq-total">
+            <b>18</b><span>个独立品牌 · 29 次推荐</span>
+          </div>
+        </div>
+        <div class="freq-list">
+          <div class="freq-row" id="freq-海康机器人" data-search-item data-search-title="海康机器人：出现 3 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">海康机器人</span>
+  <span class="freq-track"><span class="freq-bar" style="width:100%"></span></span>
+  <span class="freq-count">3<small>次</small></span>
+  <span class="freq-q">工业读码器厂家 · 机器视觉供应商 · 锂电池追溯读码</span>
+</div>
+<div class="freq-row" id="freq-奥普特" data-search-item data-search-title="奥普特：出现 3 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">奥普特</span>
+  <span class="freq-track"><span class="freq-bar" style="width:100%"></span></span>
+  <span class="freq-count">3<small>次</small></span>
+  <span class="freq-q">机器视觉供应商 · 激光位移传感器 · 锂电池追溯读码</span>
+</div>
+<div class="freq-row" id="freq-研祥金码" data-search-item data-search-title="研祥金码：出现 2 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">研祥金码</span>
+  <span class="freq-track"><span class="freq-bar" style="width:67%"></span></span>
+  <span class="freq-count">2<small>次</small></span>
+  <span class="freq-q">工业读码器厂家 · 锂电池追溯读码</span>
+</div>
+<div class="freq-row" id="freq-华汉伟业" data-search-item data-search-title="华汉伟业：出现 2 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">华汉伟业</span>
+  <span class="freq-track"><span class="freq-bar" style="width:67%"></span></span>
+  <span class="freq-count">2<small>次</small></span>
+  <span class="freq-q">机器视觉供应商 · 工业视觉方案</span>
+</div>
+<div class="freq-row" id="freq-征图新视" data-search-item data-search-title="征图新视：出现 2 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">征图新视</span>
+  <span class="freq-track"><span class="freq-bar" style="width:67%"></span></span>
+  <span class="freq-count">2<small>次</small></span>
+  <span class="freq-q">机器视觉供应商 · 工业视觉方案</span>
+</div>
+<div class="freq-row" id="freq-凌云光" data-search-item data-search-title="凌云光：出现 2 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">凌云光</span>
+  <span class="freq-track"><span class="freq-bar" style="width:67%"></span></span>
+  <span class="freq-count">2<small>次</small></span>
+  <span class="freq-q">机器视觉供应商 · 工业视觉方案</span>
+</div>
+<div class="freq-row" id="freq-天准" data-search-item data-search-title="天准：出现 2 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">天准</span>
+  <span class="freq-track"><span class="freq-bar" style="width:67%"></span></span>
+  <span class="freq-count">2<small>次</small></span>
+  <span class="freq-q">机器视觉供应商 · 工业视觉方案</span>
+</div>
+<div class="freq-row" id="freq-基恩士" data-search-item data-search-title="基恩士：出现 2 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">基恩士</span>
+  <span class="freq-track"><span class="freq-bar" style="width:67%"></span></span>
+  <span class="freq-count">2<small>次</small></span>
+  <span class="freq-q">机器视觉供应商 · 激光位移传感器</span>
+</div>
+<div class="freq-row" id="freq-康耐视" data-search-item data-search-title="康耐视：出现 2 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">康耐视</span>
+  <span class="freq-track"><span class="freq-bar" style="width:67%"></span></span>
+  <span class="freq-count">2<small>次</small></span>
+  <span class="freq-q">机器视觉供应商 · 锂电池追溯读码</span>
+</div>
+<div class="freq-row" id="freq-新大陆" data-search-item data-search-title="新大陆：出现 1 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">新大陆</span>
+  <span class="freq-track"><span class="freq-bar" style="width:33%"></span></span>
+  <span class="freq-count">1<small>次</small></span>
+  <span class="freq-q">工业读码器厂家</span>
+</div>
+<div class="freq-row" id="freq-斯普锐" data-search-item data-search-title="斯普锐：出现 1 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">斯普锐</span>
+  <span class="freq-track"><span class="freq-bar" style="width:33%"></span></span>
+  <span class="freq-count">1<small>次</small></span>
+  <span class="freq-q">工业读码器厂家</span>
+</div>
+<div class="freq-row" id="freq-微图视觉" data-search-item data-search-title="微图视觉：出现 1 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">微图视觉</span>
+  <span class="freq-track"><span class="freq-bar" style="width:33%"></span></span>
+  <span class="freq-count">1<small>次</small></span>
+  <span class="freq-q">工业读码器厂家</span>
+</div>
+<div class="freq-row" id="freq-矩子" data-search-item data-search-title="矩子：出现 1 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">矩子</span>
+  <span class="freq-track"><span class="freq-bar" style="width:33%"></span></span>
+  <span class="freq-count">1<small>次</small></span>
+  <span class="freq-q">机器视觉供应商</span>
+</div>
+<div class="freq-row" id="freq-深视智能" data-search-item data-search-title="深视智能：出现 1 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">深视智能</span>
+  <span class="freq-track"><span class="freq-bar" style="width:33%"></span></span>
+  <span class="freq-count">1<small>次</small></span>
+  <span class="freq-q">激光位移传感器</span>
+</div>
+<div class="freq-row" id="freq-无锡泓川" data-search-item data-search-title="无锡泓川：出现 1 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">无锡泓川</span>
+  <span class="freq-track"><span class="freq-bar" style="width:33%"></span></span>
+  <span class="freq-count">1<small>次</small></span>
+  <span class="freq-q">激光位移传感器</span>
+</div>
+<div class="freq-row" id="freq-欧姆龙" data-search-item data-search-title="欧姆龙：出现 1 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">欧姆龙</span>
+  <span class="freq-track"><span class="freq-bar" style="width:33%"></span></span>
+  <span class="freq-count">1<small>次</small></span>
+  <span class="freq-q">激光位移传感器</span>
+</div>
+<div class="freq-row" id="freq-松下" data-search-item data-search-title="松下：出现 1 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">松下</span>
+  <span class="freq-track"><span class="freq-bar" style="width:33%"></span></span>
+  <span class="freq-count">1<small>次</small></span>
+  <span class="freq-q">激光位移传感器</span>
+</div>
+<div class="freq-row" id="freq-Micro-Epsilon" data-search-item data-search-title="Micro-Epsilon：出现 1 次" data-search-type="竞品频次" data-search-section="AI 实际推荐了谁">
+  <span class="freq-name">Micro-Epsilon</span>
+  <span class="freq-track"><span class="freq-bar" style="width:33%"></span></span>
+  <span class="freq-count">1<small>次</small></span>
+  <span class="freq-q">激光位移传感器</span>
+</div>
+        </div>
+        <div class="freq-foot">
+          <span class="freq-zero-dot" aria-hidden="true">0</span>
+          <span>合一自动化：<b class="danger">0 次</b> —— 在所有问题中都不存在</span>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="audit" data-section-label="站点机器可读性审计">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">03 / AUDIT</p>
+          <p class="kicker">04 / AUDIT</p>
           <h2>站点机器可读性审计</h2>
           <p class="section-desc">网站允许 AI 抓取，但缺少让 AI 读懂、引用和推荐的结构化信息。6 项检查中通过 2 项。</p>
         </div>
@@ -706,7 +867,7 @@
     <section class="section" id="assets" data-section-label="GEO 内容资产">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">04 / ASSETS</p>
+          <p class="kicker">05 / ASSETS</p>
           <h2>已产出的 GEO 内容资产</h2>
           <p class="section-desc">方法论、内容与工具。带链接的资产可直接在公开站点或仓库中获取。</p>
         </div>
@@ -748,51 +909,60 @@
     <section class="section" id="roadmap" data-section-label="GEO 改造路线图">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">05 / ROADMAP</p>
+          <p class="kicker">06 / ROADMAP</p>
           <h2>改造路线图</h2>
           <p class="section-desc">按投入产出比排序的五步计划，每一步都给出可验证的信号，而不是“持续优化”这类空话。</p>
         </div>
-        <div class="section-stat"><b>5</b><span>个优先级</span></div>
+        <div class="section-stat"><b>2</b><span>/ 5 步已完成</span></div>
+      </div>
+      <div class="roadmap-progress" role="img" aria-label="路线图完成度 40%">
+        <div class="roadmap-progress-bar"><span style="width:40%"></span></div>
+        <span class="roadmap-progress-label">完成度 40%</span>
       </div>
       <div class="roadmap">
-        <div class="road-item" id="roadmap-p0" data-search-item data-search-title="P0 技术地基：修复首页 H1；部署 Organization / Product / FAQPage Schema；上线 llms.txt。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
+        <div class="road-item status-doing" id="roadmap-p0" data-search-item data-search-title="P0 技术地基（进行中）：修复首页 H1；部署 Organization / Product / FAQPage Schema；上线 llms.txt。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
   <div class="road-marker" aria-hidden="true">P0</div>
   <div class="road-body">
-    <div class="road-top"><h3>技术地基</h3><span class="road-phase">1~2 周</span></div>
+    <div class="road-top"><h3>技术地基</h3><span class="road-status status-doing">进行中</span><span class="road-phase">1~2 周</span></div>
     <p>修复首页 H1；部署 Organization / Product / FAQPage Schema；上线 llms.txt。</p>
     <p class="road-signal"><span>验收信号</span>AI 能准确识别品牌与业务；结构化数据通过校验。</p>
+    <p class="road-progress-note">本页已示范 H1 / Schema / llms.txt 的完整写法,可直接照搬到官网。</p>
   </div>
 </div>
-<div class="road-item" id="roadmap-p1" data-search-item data-search-title="P1 行业方案文章：发布《锂电池全工序追溯读码方案详解》，按极片 / 电芯 / 模组 / PACK 拆 4 篇子文章。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
+<div class="road-item status-done" id="roadmap-p1" data-search-item data-search-title="P1 行业方案文章（已完成）：发布《锂电池全工序追溯读码方案详解》，按极片 / 电芯 / 模组 / PACK 拆 4 篇子文章。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
   <div class="road-marker" aria-hidden="true">P1</div>
   <div class="road-body">
-    <div class="road-top"><h3>行业方案文章</h3><span class="road-phase">1~2 个月</span></div>
+    <div class="road-top"><h3>行业方案文章</h3><span class="road-status status-done">已完成</span><span class="road-phase">1~2 个月</span></div>
     <p>发布《锂电池全工序追溯读码方案详解》，按极片 / 电芯 / 模组 / PACK 拆 4 篇子文章。</p>
     <p class="road-signal"><span>验收信号</span>5 个目标问题中至少 1 个出现品牌或域名引用。</p>
+    <p class="road-progress-note">锂电全工序方案文章已产出,可在本仓库与附件中获取。</p>
   </div>
 </div>
-<div class="road-item" id="roadmap-p2" data-search-item data-search-title="P2 FAQ 与结构化问答：部署 30 条 FAQ（本页已公开）并上线 FAQPage Schema，按用户真实提问持续扩充。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
+<div class="road-item status-done" id="roadmap-p2" data-search-item data-search-title="P2 FAQ 与结构化问答（已完成）：部署 30 条 FAQ（本页已公开）并上线 FAQPage Schema，按用户真实提问持续扩充。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
   <div class="road-marker" aria-hidden="true">P2</div>
   <div class="road-body">
-    <div class="road-top"><h3>FAQ 与结构化问答</h3><span class="road-phase">2~3 个月</span></div>
+    <div class="road-top"><h3>FAQ 与结构化问答</h3><span class="road-status status-done">已完成</span><span class="road-phase">2~3 个月</span></div>
     <p>部署 30 条 FAQ（本页已公开）并上线 FAQPage Schema，按用户真实提问持续扩充。</p>
     <p class="road-signal"><span>验收信号</span>FAQ 页面被检索或引用；品牌提及率开始非零。</p>
+    <p class="road-progress-note">30 条 FAQ 与 FAQPage Schema 已在本页部署,可直接复用。</p>
   </div>
 </div>
-<div class="road-item" id="roadmap-p3" data-search-item data-search-title="P3 真实项目案例：整理 3~5 个脱敏案例，按「问题 → 方案 → 效果」结构写作，附读码率与节拍数据。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
+<div class="road-item status-todo" id="roadmap-p3" data-search-item data-search-title="P3 真实项目案例（未开始）：整理 3~5 个脱敏案例，按「问题 → 方案 → 效果」结构写作，附读码率与节拍数据。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
   <div class="road-marker" aria-hidden="true">P3</div>
   <div class="road-body">
-    <div class="road-top"><h3>真实项目案例</h3><span class="road-phase">3~6 个月</span></div>
+    <div class="road-top"><h3>真实项目案例</h3><span class="road-status status-todo">未开始</span><span class="road-phase">3~6 个月</span></div>
     <p>整理 3~5 个脱敏案例，按「问题 → 方案 → 效果」结构写作，附读码率与节拍数据。</p>
     <p class="road-signal"><span>验收信号</span>案例页获得外部链接与 AI 引用。</p>
+    <p class="road-progress-note">待整理 3~5 个脱敏项目案例。</p>
   </div>
 </div>
-<div class="road-item" id="roadmap-p4" data-search-item data-search-title="P4 站外品牌实体：百度百科 / 头条号 / 知乎机构号 / 公众号 + 行业媒体背书，统一全网品牌描述。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
+<div class="road-item status-todo" id="roadmap-p4" data-search-item data-search-title="P4 站外品牌实体（未开始）：百度百科 / 头条号 / 知乎机构号 / 公众号 + 行业媒体背书，统一全网品牌描述。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
   <div class="road-marker" aria-hidden="true">P4</div>
   <div class="road-body">
-    <div class="road-top"><h3>站外品牌实体</h3><span class="road-phase">3~6 个月</span></div>
+    <div class="road-top"><h3>站外品牌实体</h3><span class="road-status status-todo">未开始</span><span class="road-phase">3~6 个月</span></div>
     <p>百度百科 / 头条号 / 知乎机构号 / 公众号 + 行业媒体背书，统一全网品牌描述。</p>
     <p class="road-signal"><span>验收信号</span>AI 回答中出现品牌实体，而不只是官网链接。</p>
+    <p class="road-progress-note">待推进百度百科、头条号、知乎等站外实体。</p>
   </div>
 </div>
       </div>
@@ -801,7 +971,7 @@
     <section class="section" id="channels" data-section-label="国内 AI 检索地图">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">06 / CHANNELS</p>
+          <p class="kicker">07 / CHANNELS</p>
           <h2>国内 AI 检索地图</h2>
           <p class="section-desc">国内 AI 不是共用一个检索池，而是各自绑定自家搜索引擎——投放渠道必须跟着检索源走。</p>
         </div>
@@ -864,7 +1034,7 @@
     <section class="section" id="risks" data-section-label="现状警示">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">07 / RISKS</p>
+          <p class="kicker">08 / RISKS</p>
           <h2>现状警示</h2>
           <p class="section-desc">内容存在不等于被采信。以下三处是当前最明显的结构性缺口。</p>
         </div>
@@ -892,7 +1062,7 @@
     <section class="section" id="faq" data-section-label="FAQ 知识库">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">08 / FAQ</p>
+          <p class="kicker">09 / FAQ</p>
           <h2>FAQ 知识库</h2>
           <p class="section-desc">30 条问答覆盖三大产品线与锂电追溯场景，全部可展开、可检索、可复制。FAQ 是 AI 最容易检索和引用的内容形态。</p>
         </div>
@@ -1175,11 +1345,11 @@
     <section class="section" id="method" data-section-label="方法、许可与数据">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">09 / METHOD &amp; DATA</p>
+          <p class="kicker">10 / METHOD &amp; DATA</p>
           <h2>方法、许可与数据</h2>
           <p class="section-desc">指标如何计算、样本如何采集、可以怎么引用，以及这次快照的局限。所有原始材料都以开放格式提供。</p>
         </div>
-        <div class="section-stat"><b>v1.0.0</b><span>数据版本</span></div>
+        <div class="section-stat"><b>v1.1.0</b><span>数据版本</span></div>
       </div>
 
       <div class="method-grid">
@@ -1207,7 +1377,7 @@
         <div class="card">
           <h3 class="card-title">版本与勘误</h3>
           <p class="legacy-note">初版仪表盘标注站点可读性 2 / 5、内容资产 36；本页按 6 项检测与 38 项资产清单重新核算，原始数值保留在开放数据的 <code>snapshot.legacy</code> 字段中。</p>
-          <ul class="changelog"><li><time datetime="2026-11-11">2026-11-11</time><span>公开发布 v1.0：新增全文检索、FAQ 知识库、开放数据下载与机器可读输出；站点可读性由 2/5 修正为 2/6、内容资产由 36 修正为 38。</span></li><li><time datetime="2026-10-31">2026-10-31</time><span>完成 5 个核心问题的 AI 搜索检测与站点审计，产出初版可视化仪表盘。</span></li></ul>
+          <ul class="changelog"><li><time datetime="2026-11-11">2026-11-11</time><span>v1.1.0:新增「关键发现」洞察区与竞品出现频次图;路线图增加进度状态;运营脚本支持代理环境下的 GitHub API。</span></li><li><time datetime="2026-11-11">2026-11-11</time><span>公开发布 v1.0：新增全文检索、FAQ 知识库、开放数据下载与机器可读输出；站点可读性由 2/5 修正为 2/6、内容资产由 36 修正为 38。</span></li><li><time datetime="2026-10-31">2026-10-31</time><span>完成 5 个核心问题的 AI 搜索检测与站点审计，产出初版可视化仪表盘。</span></li></ul>
         </div>
       </div>
 
@@ -1246,9 +1416,9 @@
         <aside class="license-aside">
           <p class="aside-label">开放数据文件</p>
           <div class="download-grid">
-            <a class="download-card" href="data/geo-report.json" download><svg class="icon" aria-hidden="true"><use href="#i-braces"/></svg><span class="download-name">geo-report.json<small>31 KB</small></span><svg class="icon download-arrow" aria-hidden="true"><use href="#i-download"/></svg></a>
+            <a class="download-card" href="data/geo-report.json" download><svg class="icon" aria-hidden="true"><use href="#i-braces"/></svg><span class="download-name">geo-report.json<small>37 KB</small></span><svg class="icon download-arrow" aria-hidden="true"><use href="#i-download"/></svg></a>
 <a class="download-card" href="data/faq-schema.json" download><svg class="icon" aria-hidden="true"><use href="#i-braces"/></svg><span class="download-name">faq-schema.json<small>10 KB</small></span><svg class="icon download-arrow" aria-hidden="true"><use href="#i-download"/></svg></a>
-<a class="download-card" href="index.md" download><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg><span class="download-name">index.md<small>24 KB</small></span><svg class="icon download-arrow" aria-hidden="true"><use href="#i-download"/></svg></a>
+<a class="download-card" href="index.md" download><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg><span class="download-name">index.md<small>25 KB</small></span><svg class="icon download-arrow" aria-hidden="true"><use href="#i-download"/></svg></a>
 <a class="download-card" href="llms.txt" download><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span class="download-name">llms.txt<small>1 KB</small></span><svg class="icon download-arrow" aria-hidden="true"><use href="#i-download"/></svg></a>
           </div>
         </aside>
@@ -1258,7 +1428,7 @@
     <section class="section" id="feedback" data-section-label="建议与修订">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">10 / FEEDBACK</p>
+          <p class="kicker">11 / FEEDBACK</p>
           <h2>建议与修订</h2>
           <p class="section-desc">任何人都可以指出数据错误、补充内容或提出体验改进。建议进入审核队列，由维护者与 AI 助手评估；采纳后直接修改数据、重新构建并记录在这里。</p>
         </div>
@@ -1336,19 +1506,18 @@
     </div>
     <nav class="footer-nav" aria-label="页脚目录">
       <a href="#overview">概览</a>
+<a href="#insights">洞察</a>
 <a href="#gap">检测</a>
 <a href="#brands">品牌</a>
 <a href="#audit">审计</a>
-<a href="#assets">资产</a>
 <a href="#roadmap">路线</a>
-<a href="#channels">渠道</a>
 <a href="#faq">FAQ</a>
 <a href="#method">数据</a>
 <a href="#feedback">建议</a>
     </nav>
     <div class="footer-meta">
       <p>© 2026 合一自动化 · 数据 CC BY 4.0 · 代码 MIT</p>
-      <p>数据快照 2026-10-31 · 页面构建 2026-11-11 · v1.0.0</p>
+      <p>数据快照 2026-10-31 · 页面构建 2026-11-11 · v1.1.0</p>
       <p class="footer-disclaimer">AI 回答会随模型、时间与联网结果变化；本页为历史快照，不构成商业排名或采购建议。</p>
     </div>
   </div>

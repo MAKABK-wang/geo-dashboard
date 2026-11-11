@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "site": {
     "lang": "zh-CN",
     "title": "GEO 可视化仪表盘 · 合一自动化 AI 搜索可见性公开报告",
@@ -284,35 +284,45 @@
       "phase": "1~2 周",
       "title": "技术地基",
       "desc": "修复首页 H1；部署 Organization / Product / FAQPage Schema；上线 llms.txt。",
-      "signal": "AI 能准确识别品牌与业务；结构化数据通过校验。"
+      "signal": "AI 能准确识别品牌与业务；结构化数据通过校验。",
+      "status": "doing",
+      "progress_note": "本页已示范 H1 / Schema / llms.txt 的完整写法,可直接照搬到官网。"
     },
     {
       "id": "P1",
       "phase": "1~2 个月",
       "title": "行业方案文章",
       "desc": "发布《锂电池全工序追溯读码方案详解》，按极片 / 电芯 / 模组 / PACK 拆 4 篇子文章。",
-      "signal": "5 个目标问题中至少 1 个出现品牌或域名引用。"
+      "signal": "5 个目标问题中至少 1 个出现品牌或域名引用。",
+      "status": "done",
+      "progress_note": "锂电全工序方案文章已产出,可在本仓库与附件中获取。"
     },
     {
       "id": "P2",
       "phase": "2~3 个月",
       "title": "FAQ 与结构化问答",
       "desc": "部署 30 条 FAQ（本页已公开）并上线 FAQPage Schema，按用户真实提问持续扩充。",
-      "signal": "FAQ 页面被检索或引用；品牌提及率开始非零。"
+      "signal": "FAQ 页面被检索或引用；品牌提及率开始非零。",
+      "status": "done",
+      "progress_note": "30 条 FAQ 与 FAQPage Schema 已在本页部署,可直接复用。"
     },
     {
       "id": "P3",
       "phase": "3~6 个月",
       "title": "真实项目案例",
       "desc": "整理 3~5 个脱敏案例，按「问题 → 方案 → 效果」结构写作，附读码率与节拍数据。",
-      "signal": "案例页获得外部链接与 AI 引用。"
+      "signal": "案例页获得外部链接与 AI 引用。",
+      "status": "todo",
+      "progress_note": "待整理 3~5 个脱敏项目案例。"
     },
     {
       "id": "P4",
       "phase": "3~6 个月",
       "title": "站外品牌实体",
       "desc": "百度百科 / 头条号 / 知乎机构号 / 公众号 + 行业媒体背书，统一全网品牌描述。",
-      "signal": "AI 回答中出现品牌实体，而不只是官网链接。"
+      "signal": "AI 回答中出现品牌实体，而不只是官网链接。",
+      "status": "todo",
+      "progress_note": "待推进百度百科、头条号、知乎等站外实体。"
     }
   ],
   "channels": [
@@ -650,11 +660,211 @@
   "changelog": [
     {
       "date": "2026-11-11",
+      "text": "v1.1.0:新增「关键发现」洞察区与竞品出现频次图;路线图增加进度状态;运营脚本支持代理环境下的 GitHub API。"
+    },
+    {
+      "date": "2026-11-11",
       "text": "公开发布 v1.0：新增全文检索、FAQ 知识库、开放数据下载与机器可读输出；站点可读性由 2/5 修正为 2/6、内容资产由 36 修正为 38。"
     },
     {
       "date": "2026-10-31",
       "text": "完成 5 个核心问题的 AI 搜索检测与站点审计，产出初版可视化仪表盘。"
+    }
+  ],
+  "competitor_frequency": {
+    "total_mentions": 29,
+    "unique_brands": 18,
+    "items": [
+      {
+        "brand": "海康机器人",
+        "count": 3,
+        "share": 10.3,
+        "questions": [
+          "工业读码器厂家",
+          "机器视觉供应商",
+          "锂电池追溯读码"
+        ]
+      },
+      {
+        "brand": "奥普特",
+        "count": 3,
+        "share": 10.3,
+        "questions": [
+          "机器视觉供应商",
+          "激光位移传感器",
+          "锂电池追溯读码"
+        ]
+      },
+      {
+        "brand": "研祥金码",
+        "count": 2,
+        "share": 6.9,
+        "questions": [
+          "工业读码器厂家",
+          "锂电池追溯读码"
+        ]
+      },
+      {
+        "brand": "华汉伟业",
+        "count": 2,
+        "share": 6.9,
+        "questions": [
+          "机器视觉供应商",
+          "工业视觉方案"
+        ]
+      },
+      {
+        "brand": "征图新视",
+        "count": 2,
+        "share": 6.9,
+        "questions": [
+          "机器视觉供应商",
+          "工业视觉方案"
+        ]
+      },
+      {
+        "brand": "凌云光",
+        "count": 2,
+        "share": 6.9,
+        "questions": [
+          "机器视觉供应商",
+          "工业视觉方案"
+        ]
+      },
+      {
+        "brand": "天准",
+        "count": 2,
+        "share": 6.9,
+        "questions": [
+          "机器视觉供应商",
+          "工业视觉方案"
+        ]
+      },
+      {
+        "brand": "基恩士",
+        "count": 2,
+        "share": 6.9,
+        "questions": [
+          "机器视觉供应商",
+          "激光位移传感器"
+        ]
+      },
+      {
+        "brand": "康耐视",
+        "count": 2,
+        "share": 6.9,
+        "questions": [
+          "机器视觉供应商",
+          "锂电池追溯读码"
+        ]
+      },
+      {
+        "brand": "新大陆",
+        "count": 1,
+        "share": 3.4,
+        "questions": [
+          "工业读码器厂家"
+        ]
+      },
+      {
+        "brand": "斯普锐",
+        "count": 1,
+        "share": 3.4,
+        "questions": [
+          "工业读码器厂家"
+        ]
+      },
+      {
+        "brand": "微图视觉",
+        "count": 1,
+        "share": 3.4,
+        "questions": [
+          "工业读码器厂家"
+        ]
+      },
+      {
+        "brand": "矩子",
+        "count": 1,
+        "share": 3.4,
+        "questions": [
+          "机器视觉供应商"
+        ]
+      },
+      {
+        "brand": "深视智能",
+        "count": 1,
+        "share": 3.4,
+        "questions": [
+          "激光位移传感器"
+        ]
+      },
+      {
+        "brand": "无锡泓川",
+        "count": 1,
+        "share": 3.4,
+        "questions": [
+          "激光位移传感器"
+        ]
+      },
+      {
+        "brand": "欧姆龙",
+        "count": 1,
+        "share": 3.4,
+        "questions": [
+          "激光位移传感器"
+        ]
+      },
+      {
+        "brand": "松下",
+        "count": 1,
+        "share": 3.4,
+        "questions": [
+          "激光位移传感器"
+        ]
+      },
+      {
+        "brand": "Micro-Epsilon",
+        "count": 1,
+        "share": 3.4,
+        "questions": [
+          "激光位移传感器"
+        ]
+      }
+    ],
+    "note": "同一品牌在多个问题的回答中被反复推荐,说明其已形成跨场景的“品牌实体”关联;合一为 0 次。"
+  },
+  "insights": [
+    {
+      "id": "ins-1",
+      "tone": "danger",
+      "number": "0 / 5",
+      "title": "品牌在 AI 检索池里不存在",
+      "desc": "5 个核心问题,AI 推荐了 29 家次竞品,合一自动化一次都没出现。不是回答有误,而是检索池里缺少“合一 + 工业视觉”的强关联信息。",
+      "tag": "实体缺失"
+    },
+    {
+      "id": "ins-2",
+      "tone": "warn",
+      "number": "83%",
+      "title": "竞品靠“跨场景重复”建立权威",
+      "desc": "海康机器人、奥普特在多个问题中被反复推荐,说明 AI 更信任“在多类场景下都被提到”的品牌,而非只在单一品类出现过一次的品牌。",
+      "tag": "竞品打法"
+    },
+    {
+      "id": "ins-3",
+      "tone": "warn",
+      "number": "2 / 6",
+      "title": "技术地基只差 4 项",
+      "desc": "robots 与 sitemap 已就绪,缺的是 H1、Schema、llms.txt 与知识型内容。这 4 项都是低成本、可在一两周内补齐的确定性动作。",
+      "tag": "可快速修复"
+    },
+    {
+      "id": "ins-4",
+      "tone": "success",
+      "number": "30 条",
+      "title": "内容弹药已经就位",
+      "desc": "30 条 FAQ、锂电全工序方案、竞品打法分析都已产出并公开在本页。缺的不是内容,而是把这些内容放到 AI 会采信的地方。",
+      "tag": "资产就绪"
     }
   ]
 }

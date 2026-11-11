@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Operator CLI —— 全权运营 GitHub 上的 GEO 开放仪表盘。
 
@@ -30,6 +30,7 @@ import argparse
 import json
 import os
 import shutil
+import ssl
 import subprocess
 import sys
 import urllib.error
@@ -68,6 +69,40 @@ def load_token() -> str:
 TOKEN = load_token()
 
 
+def build_ssl_context() -> ssl.SSLContext:
+    """GitHub API 的 TLS 上下文。
+
+    部分代理/企业环境(如 Clash 等 MITM 代理)会在握手时返回不完整证书链,
+    Python 的默认信任库无法验证,而浏览器能验证成功。按需降级并显式告警,
+    避免运营命令因环境证书问题完全不可用。
+
+    可通过环境变量强制控制:
+        GEO_TLS_VERIFY=1  始终严格校验(失败即报错)
+        GEO_TLS_VERIFY=0  跳过校验(仅限可信网络)
+    """
+    mode = os.environ.get("GEO_TLS_VERIFY", "").strip()
+    if mode == "0":
+        print("⚠️  GEO_TLS_VERIFY=0:已跳过 TLS 证书校验。", file=sys.stderr)
+        return ssl._create_unverified_context()  # noqa: SLF001
+    context = ssl.create_default_context()
+    if mode == "1":
+        return context
+    try:
+        # 用一次轻量握手探测默认信任库在该网络环境下是否可用
+        with urllib.request.urlopen("https://api.github.com", timeout=20, context=context):
+            pass
+        return context
+    except urllib.error.URLError as error:
+        if isinstance(error.reason, ssl.SSLError):
+            print(
+                "⚠️  本机证书链校验失败(通常由本地代理/企业根证书导致),已自动降级为不校验。"
+                "如需严格校验请设置 GEO_TLS_VERIFY=1。",
+                file=sys.stderr,
+            )
+            return ssl._create_unverified_context()  # noqa: SLF001
+        return context
+
+
 def api(method: str, path: str, body: dict | None = None) -> dict:
     url = API + path
     data = json.dumps(body).encode("utf-8") if body is not None else None
@@ -78,8 +113,9 @@ def api(method: str, path: str, body: dict | None = None) -> dict:
     request.add_header("X-GitHub-Api-Version", "2022-11-28")
     if body is not None:
         request.add_header("Content-Type", "application/json")
+    context = build_ssl_context()
     try:
-        with urllib.request.urlopen(request, timeout=60) as response:
+        with urllib.request.urlopen(request, timeout=60, context=context) as response:
             payload = response.read().decode("utf-8")
             return json.loads(payload) if payload else {}
     except urllib.error.HTTPError as error:
