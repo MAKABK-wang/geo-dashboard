@@ -595,6 +595,41 @@
     });
   });
 
+  /* ------------------------------------------------------------ glossary */
+  var glossaryFilter = $('#glossaryFilter');
+  var glossaryHint = $('#glossaryHint');
+  var glossaryCards = $$('.gloss-card');
+
+  function filterGlossary(raw) {
+    if (!glossaryCards.length) return;
+    var terms = raw.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    var visible = 0;
+    glossaryCards.forEach(function (card) {
+      var text = card.textContent.toLowerCase();
+      var match = terms.every(function (term) { return text.indexOf(term) !== -1; });
+      card.hidden = !match;
+      if (match) visible += 1;
+    });
+    if (glossaryHint) {
+      glossaryHint.textContent = terms.length
+        ? visible + ' / ' + glossaryCards.length + ' 条'
+        : glossaryCards.length + ' 条术语';
+    }
+  }
+
+  if (glossaryFilter) {
+    filterGlossary('');
+    glossaryFilter.addEventListener('input', function () {
+      filterGlossary(glossaryFilter.value);
+    });
+    glossaryFilter.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        glossaryFilter.value = '';
+        filterGlossary('');
+      }
+    });
+  }
+
   /* --------------------------------------------------------- suggestions */
   var suggestDialog = $('#suggestDialog');
   var suggestForm = $('#suggestForm');

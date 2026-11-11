@@ -1027,6 +1027,208 @@ h1 {
   color: var(--text-3);
 }
 
+/* ---------------------------------------------------------- industries ---- */
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.industry-card {
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: border-color 0.18s ease;
+}
+
+.industry-card:hover {
+  border-color: var(--border-strong);
+}
+
+.industry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.industry-head h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.industry-index {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.industry-stage {
+  margin: 5px 0 14px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+}
+
+.industry-dl {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 9px 12px;
+  margin: 0;
+}
+
+.industry-dl dt {
+  padding-top: 2px;
+  font-size: 10.5px;
+  color: var(--text-3);
+}
+
+.industry-dl dd {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--text-2);
+}
+
+.industry-solution {
+  color: var(--text-2) !important;
+}
+
+/* ------------------------------------------------------------ glossary ---- */
+.glossary-search {
+  position: relative;
+  max-width: 460px;
+  margin-bottom: 16px;
+}
+
+.glossary-search .icon {
+  position: absolute;
+  left: 12px;
+  top: 11px;
+  color: var(--text-3);
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+.glossary-search input {
+  width: 100%;
+  height: 38px;
+  padding: 0 120px 0 36px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 12.5px;
+}
+
+.glossary-search input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.glossary-hint {
+  position: absolute;
+  right: 12px;
+  top: 11px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-3);
+  pointer-events: none;
+}
+
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gloss-card {
+  display: flex;
+  flex-direction: column;
+  padding: 17px 18px 15px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: border-color 0.18s ease;
+}
+
+.gloss-card:hover {
+  border-color: var(--border-strong);
+}
+
+.gloss-card[hidden] {
+  display: none;
+}
+
+.gloss-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 3px;
+}
+
+.gloss-head h3 {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+}
+
+.gloss-cn {
+  font-size: 11px;
+  color: var(--text-3);
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--surface-3);
+}
+
+.gloss-full {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--text-3);
+  letter-spacing: 0.01em;
+}
+
+.gloss-def {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--text-2);
+}
+
+.gloss-check {
+  display: flex;
+  gap: 7px;
+  margin: auto 0 0;
+  padding-top: 9px;
+  border-top: 1px dashed var(--border);
+  font-size: 11px;
+  line-height: 1.65;
+  color: var(--text-3);
+}
+
+.gloss-check span {
+  flex: none;
+  height: fit-content;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+}
+
 /* ------------------------------------------------------------- section ---- */
 .section {
   margin-top: 84px;
@@ -3318,6 +3520,10 @@ tr.is-flash {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .glossary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .asset-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3606,6 +3812,19 @@ tr.is-flash {
 
   .insight-grid {
     grid-template-columns: 1fr;
+  }
+
+  .industry-grid,
+  .glossary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .glossary-search input {
+    padding-right: 12px;
+  }
+
+  .glossary-hint {
+    display: none;
   }
 
   .freq-row {

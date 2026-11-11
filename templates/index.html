@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN" data-theme="dark">
 <head>
 <meta charset="UTF-8">
@@ -131,13 +131,13 @@
       <div class="hero-copy">
         <p class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span> OPEN GEO REPORT <span class="eyebrow-sep">/</span> 数据快照 {{SNAPSHOT_DATE}}</p>
         <h1>GEO 可视化仪表盘<span class="h1-sub">合一自动化 · <span class="grad-text">AI 搜索可见性</span>公开报告</span></h1>
-        <p class="hero-lead">把一次完整的 GEO 检测摆上台面：5 个工业视觉核心问题、{{TOTAL_BRANDS}} 次竞品推荐、{{MENTION_DISPLAY}} 次品牌提及。站点审计、30 条 FAQ、方法与局限全部公开，任何人都可以检索、引用和复用。</p>
+        <p class="hero-lead">把一次完整的 GEO 检测摆上台面：5 个工业视觉核心问题、{{TOTAL_BRANDS}} 次竞品推荐、{{MENTION_DISPLAY}} 次品牌提及。站点审计、40 条 FAQ、方法与局限全部公开，任何人都可以检索、引用和复用。</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="data/geo-report.json" download>
             <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> 下载开放数据
           </a>
           <a class="btn btn-secondary" href="#faq">
-            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg> 检索 30 条 FAQ
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg> 检索 40 条 FAQ
           </a>
           <a class="btn btn-ghost" href="#method">方法与许可 <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
         </div>
@@ -350,12 +350,46 @@
       </div>
     </section>
 
+    <section class="section" id="industries" data-section-label="行业场景对比">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">09 / INDUSTRIES</p>
+          <h2>行业场景对比</h2>
+          <p class="section-desc">{{INDUSTRIES_INTRO}}</p>
+        </div>
+        <div class="section-stat"><b>{{INDUSTRIES_COUNT}}</b><span>个典型行业</span></div>
+      </div>
+      <div class="industry-grid">
+        {{INDUSTRY_CARDS}}
+      </div>
+    </section>
+
+    <section class="section" id="glossary" data-section-label="GEO 术语表">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">10 / GLOSSARY</p>
+          <h2>GEO 术语表</h2>
+          <p class="section-desc">{{GLOSSARY_INTRO}}</p>
+        </div>
+        <div class="section-stat"><b>{{GLOSSARY_COUNT}}</b><span>个核心概念</span></div>
+      </div>
+      <div class="glossary-search">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr-only" for="glossaryFilter">筛选术语</label>
+        <input id="glossaryFilter" type="search" placeholder="输入关键词筛选术语,如 DPM、llms、实体…" autocomplete="off">
+        <span class="glossary-hint" id="glossaryHint"></span>
+      </div>
+      <div class="glossary-grid" id="glossaryGrid">
+        {{GLOSSARY_CARDS}}
+      </div>
+    </section>
+
     <section class="section" id="faq" data-section-label="FAQ 知识库">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">09 / FAQ</p>
+          <p class="kicker">11 / FAQ</p>
           <h2>FAQ 知识库</h2>
-          <p class="section-desc">30 条问答覆盖三大产品线与锂电追溯场景，全部可展开、可检索、可复制。FAQ 是 AI 最容易检索和引用的内容形态。</p>
+          <p class="section-desc">40 条问答覆盖工业读码、机器视觉、传感器与锂电追溯，全部可展开、可检索、可复制。FAQ 是 AI 最容易检索和引用的内容形态。</p>
         </div>
         <div class="section-stat"><b>{{FAQ_COUNT}}</b><span>条可检索问答</span></div>
       </div>
@@ -377,7 +411,7 @@
     <section class="section" id="method" data-section-label="方法、许可与数据">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">10 / METHOD &amp; DATA</p>
+          <p class="kicker">12 / METHOD &amp; DATA</p>
           <h2>方法、许可与数据</h2>
           <p class="section-desc">指标如何计算、样本如何采集、可以怎么引用，以及这次快照的局限。所有原始材料都以开放格式提供。</p>
         </div>
@@ -449,7 +483,7 @@
     <section class="section" id="feedback" data-section-label="建议与修订">
       <div class="section-head">
         <div class="section-heading">
-          <p class="kicker">11 / FEEDBACK</p>
+          <p class="kicker">13 / FEEDBACK</p>
           <h2>建议与修订</h2>
           <p class="section-desc">任何人都可以指出数据错误、补充内容或提出体验改进。建议进入审核队列，由维护者与 AI 助手评估；采纳后直接修改数据、重新构建并记录在这里。</p>
         </div>

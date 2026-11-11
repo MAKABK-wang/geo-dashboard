@@ -39,6 +39,8 @@ NAV_ITEMS = [
     ("brands", "品牌"),
     ("audit", "审计"),
     ("roadmap", "路线"),
+    ("industries", "行业"),
+    ("glossary", "术语"),
     ("faq", "FAQ"),
     ("method", "数据"),
 ]
@@ -405,6 +407,48 @@ def render_frequency(data: dict) -> tuple[str, str, str]:
     return "\n".join(rows), str(freq.get("unique_brands", len(items))), esc(freq.get("note", ""))
 
 
+def render_industries(data: dict) -> str:
+    industries = data.get("industries") or {}
+    cards = []
+    for index, item in enumerate(industries.get("items", []), start=1):
+        targets = "".join(f'<span class="pill">{esc(t)}</span>' for t in item["targets"])
+        challenges = "".join(f'<span class="pill pill-danger">{esc(c)}</span>' for c in item["challenges"])
+        cards.append(
+            f'<article class="industry-card" id="industry-{index}" data-search-item '
+            f'data-search-title="{attr(item["name"] + "：" + item["stage"])}" data-search-type="行业场景" '
+            f'data-search-section="行业场景对比">\n'
+            f'  <div class="industry-head"><h3>{esc(item["name"])}</h3><span class="industry-index">{index:02d}</span></div>\n'
+            f'  <p class="industry-stage">{esc(item["stage"])}</p>\n'
+            f'  <dl class="industry-dl">\n'
+            f'    <dt>检测对象</dt><dd><div class="pills">{targets}</div></dd>\n'
+            f'    <dt>主要难点</dt><dd><div class="pills">{challenges}</div></dd>\n'
+            f'    <dt>方案要点</dt><dd class="industry-solution">{esc(item["solution"])}</dd>\n'
+            f'  </dl>\n'
+            f'</article>'
+        )
+    return "\n".join(cards)
+
+
+def render_glossary(data: dict) -> str:
+    glossary = data.get("glossary") or {}
+    cards = []
+    for index, item in enumerate(glossary.get("items", []), start=1):
+        full = item.get("full", "")
+        full_html = f'<span class="gloss-full">{esc(full)}</span>' if full else ""
+        cards.append(
+            f'<article class="gloss-card" id="gloss-{index}" data-search-item '
+            f'data-search-title="{attr(item["term"] + "：" + item["cn"])}" data-search-type="术语" '
+            f'data-search-section="GEO 术语表">\n'
+            f'  <div class="gloss-head"><h3>{esc(item["term"])}</h3>'
+            f'<span class="gloss-cn">{esc(item["cn"])}</span></div>\n'
+            f'  {full_html}\n'
+            f'  <p class="gloss-def">{esc(item["def"])}</p>\n'
+            f'  <p class="gloss-check"><span>自查</span>{esc(item["check"])}</p>\n'
+            f'</article>'
+        )
+    return "\n".join(cards)
+
+
 def render_roadmap(data: dict) -> str:
     labels = {"done": "已完成", "doing": "进行中", "todo": "未开始"}
     items = []
@@ -624,7 +668,7 @@ def jsonld_graph(data: dict, base_url: str) -> dict:
                 "name": "合一自动化 AI 搜索可见性快照（2026-10-31）",
                 "description": (
                     f"5 个工业视觉核心问题的 AI 搜索检测数据：品牌提及 {metrics['mentioned']}/{metrics['total_queries']}，"
-                    f"域名引用 {metrics['cited']}/{metrics['total_queries']}；含 30 条 FAQ、站点审计与检测方法。"
+                    f"域名引用 {metrics['cited']}/{metrics['total_queries']}；含 {metrics['faq_count']} 条 FAQ、站点审计与检测方法。"
                 ),
                 "creator": {"@id": org_id},
                 "datePublished": snapshot["published_at"],
@@ -749,7 +793,23 @@ def render_markdown(data: dict, base_url: str) -> str:
     for risk in data["risks"]:
         lines.append(f"- **{risk['title']}**（风险 {risk['severity']}）：{risk['desc']}")
     lines.append("")
-    lines.append("## 八、FAQ 知识库")
+    lines.append("## 八、行业场景对比")
+    lines.append("")
+    lines.append("| 行业 | 工序链 | 检测对象 | 主要难点 | 方案要点 |")
+    lines.append("|---|---|---|---|---|")
+    for item in (data.get("industries") or {}).get("items", []):
+        lines.append(
+            f"| {item['name']} | {item['stage']} | {'、'.join(item['targets'])} | "
+            f"{'、'.join(item['challenges'])} | {item['solution']} |"
+        )
+    lines.append("")
+    lines.append("## 九、GEO 术语表")
+    lines.append("")
+    for item in (data.get("glossary") or {}).get("items", []):
+        full = f"（{item['full']}）" if item.get("full") else ""
+        lines.append(f"- **{item['term']}{full} · {item['cn']}**：{item['def']} 自查：{item['check']}")
+    lines.append("")
+    lines.append("## 十、FAQ 知识库")
     lines.append("")
     for category in data["faq"]["categories"]:
         lines.append(f"### {category['name']}")
@@ -761,7 +821,7 @@ def render_markdown(data: dict, base_url: str) -> str:
             lines.append("")
             lines.append(item["a"])
             lines.append("")
-    lines.append("## 九、方法与局限")
+    lines.append("## 十一、方法与局限")
     lines.append("")
     lines.append("| 指标 | 判定方式 | 本次结果 |")
     lines.append("|---|---|---|")
@@ -778,7 +838,7 @@ def render_markdown(data: dict, base_url: str) -> str:
     for item in data["method"]["limitations"]:
         lines.append(f"- {item}")
     lines.append("")
-    lines.append("## 十、引用")
+    lines.append("## 十二、引用")
     lines.append("")
     lines.append("```text")
     lines.append(data["method"]["citation"]["text"].replace("{URL}", page_url))
@@ -788,7 +848,7 @@ def render_markdown(data: dict, base_url: str) -> str:
     lines.append(data["method"]["citation"]["bibtex"].replace("{URL}", page_url))
     lines.append("```")
     lines.append("")
-    lines.append("## 十一、建议与修订")
+    lines.append("## 十三、建议与修订")
     lines.append("")
     lines.append("任何人均可提交数据修正、内容补充或体验建议。建议进入审核队列，采纳后直接更新数据、重新构建并记录。")
     lines.append("")
@@ -831,7 +891,7 @@ def render_llms(data: dict, base_url: str) -> str:
         f"- 数据许可：{site['license_data']}；代码许可：{site['license_code']}",
         "",
         "## 主要资源",
-        f"- [仪表盘（HTML）]({prefix})：图表、审计、30 条 FAQ 与引用格式。",
+        f"- [仪表盘（HTML）]({prefix})：图表、审计、{metrics['faq_count']} 条 FAQ 与引用格式。",
         f"- [完整开放数据（JSON）]({prefix}data/geo-report.json)：本页全部结构化数据。",
         f"- [FAQ 结构化数据（JSON-LD）]({prefix}data/faq-schema.json)：schema.org FAQPage。",
         f"- [Markdown 全文]({prefix}index.md)：适合大模型检索与引用的纯文本版本。",
@@ -979,6 +1039,12 @@ def render_page(data: dict, base_url: str, files: dict[str, str]) -> str:
         "QUOTE_QUESTION": "1",
         "KPI_CARDS": render_kpis(data, metrics),
         "INSIGHT_CARDS": render_insights(data),
+        "INDUSTRY_CARDS": render_industries(data),
+        "INDUSTRIES_INTRO": esc((data.get("industries") or {}).get("intro", "")),
+        "INDUSTRIES_COUNT": str(len((data.get("industries") or {}).get("items", []))),
+        "GLOSSARY_CARDS": render_glossary(data),
+        "GLOSSARY_INTRO": esc((data.get("glossary") or {}).get("intro", "")),
+        "GLOSSARY_COUNT": str(len((data.get("glossary") or {}).get("items", []))),
         "FREQ_ROWS": freq_rows,
         "FREQ_BRANDS": freq_brands,
         "FREQ_NOTE": freq_note,
@@ -1047,9 +1113,23 @@ class DocumentParser(HTMLParser):
 
 def validate(data: dict, page: str, base_url: str, expected_files: set[str] | None = None) -> None:
     metrics = compute(data)
-    assert metrics["faq_count"] == 30, "expected 30 FAQ entries"
+    faq_items = data["faq"]["items"]
+    assert metrics["faq_count"] == len(faq_items), "FAQ count mismatch"
+    assert metrics["faq_count"] >= 30, "FAQ bank should keep at least 30 entries"
     assert metrics["total_queries"] == 5, "expected 5 queries"
     assert metrics["mentioned"] == 0 and metrics["cited"] == 0, "snapshot should be zero mentions"
+
+    # FAQ 结构完整性:分类合法、id 唯一、问答非空
+    valid_categories = {c["id"] for c in data["faq"]["categories"]}
+    seen_ids = set()
+    for item in faq_items:
+        if item["category"] not in valid_categories:
+            raise ValueError(f"FAQ {item['id']} has unknown category {item['category']}")
+        if item["id"] in seen_ids:
+            raise ValueError(f"duplicate FAQ id: {item['id']}")
+        seen_ids.add(item["id"])
+        if not item.get("q") or not item.get("a"):
+            raise ValueError(f"FAQ {item['id']} is missing question or answer")
 
     accepted = load_accepted_suggestions()
     for item in accepted.get("items", []):
