@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO 可视化仪表盘 · 合一自动化 AI 搜索可见性公开报告</title>
+<meta name="description" content="公开的 GEO 检测报告：5 个工业视觉核心问题在 AI 搜索中的品牌提及率与域名引用率均为 0%；附站点机器可读性审计、30 条 FAQ 知识库与可下载的开放数据。">
+<meta name="author" content="合一自动化">
+<meta name="keywords" content="GEO,生成式引擎优化,AI 搜索,品牌提及率,工业读码器,机器视觉,激光位移传感器,锂电池追溯,合一自动化">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="generator" content="scripts/build.py · open GEO dashboard">
+<meta name="theme-color" content="#070b16" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f6fb" media="(prefers-color-scheme: light)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GEO 开放仪表盘">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="GEO 可视化仪表盘 · 合一自动化 AI 搜索可见性公开报告">
+<meta property="og:description" content="公开的 GEO 检测报告：5 个工业视觉核心问题在 AI 搜索中的品牌提及率与域名引用率均为 0%；附站点机器可读性审计、30 条 FAQ 知识库与可下载的开放数据。">
+<meta property="og:image" content="assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GEO 可视化仪表盘：合一自动化 AI 搜索可见性公开报告">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GEO 可视化仪表盘 · 合一自动化 AI 搜索可见性公开报告">
+<meta name="twitter:description" content="公开的 GEO 检测报告：5 个工业视觉核心问题在 AI 搜索中的品牌提及率与域名引用率均为 0%；附站点机器可读性审计、30 条 FAQ 知识库与可下载的开放数据。">
+<meta name="twitter:image" content="assets/og-cover.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.visionheyi.com/#organization",
+      "name": "广东合一自动化科技有限公司",
+      "alternateName": [
+        "合一自动化",
+        "广东合一自动化",
+        "合一自动化科技",
+        "合一"
+      ],
+      "url": "https://www.visionheyi.com/",
+      "description": "专注机器工业视觉，提供工业读码器、视觉检测系统、激光位移传感器等核心零部件与解决方案，重点服务新能源锂电、3C 电子、汽车零部件等行业。",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "广东省",
+        "addressLocality": "深圳市光明区"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "#faq",
+      "name": "合一自动化 FAQ 知识库",
+      "inLanguage": "zh-CN",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "工业读码器和普通条码枪有什么区别?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "工业读码器面向产线连续作业,具备毫秒级响应、抗反光、支持 DPM 码、可接入 PLC/MES;普通条码枪多用于人工扫码,难以稳定应对高速、反光、金属码面等工业场景。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "什么是 DPM 码?为什么难读?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DPM 是直接部件标识(Direct Part Marking),常见于金属镭雕、激光雕刻码。其对比度低、表面反光,普通读码器漏读率高,需要专门支持 DPM 的读码器和合适的照明方案。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "固定式读码器和手持式读码器怎么选?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "产线连续追溯选固定式(自动触发、毫秒级);抽检、补扫、移动场景选手持式。关键看线速、码类型、安装空间和是否需接 PLC。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "工业读码器能读哪些码制?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "主流工业读码器支持一维码(Code128、Code39 等)与二维码(QR、DataMatrix),合一 HN-SR 系列及海康机器人产品均覆盖一维/二维及 DPM 码。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "读码速度受什么影响?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "主要受码面反光、码大小、运动速度、照明方式和解码算法影响。高速产线需选高帧率读码器并做现场光照调试。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "工业读码器如何接入产线系统?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "通过 PLC、I/O、串口或以太网接口接入,支持与 MES/追溯系统对接。选型时应确认通信协议与接口类型。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "一箱多码怎么读?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "使用大视野读码器并配合多码定位算法,可一次读取整箱/整托盘的多个码,适用于模组、PACK、物流环节。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "读码失败怎么办?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "应有补扫流程(人工补扫或二次读码工位),并记录失败原因用于持续优化。方案设计时应预留补扫机制。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "工业读码器的寿命和维护成本高吗?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "工业级读码器支持 7×24 小时运行,正常维护以清洁镜头、检查照明为主。具体寿命依使用环境而定。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "合一自动化提供哪些读码器?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "提供自主品牌 HN-SR 系列工业读码器,以及海康机器人 ID/IDH/SC 系列核心经销产品,覆盖固定式、手持式及锂电全工序追溯需求。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "机器视觉检测系统能检测什么?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可做外观缺陷检测、尺寸测量、定位引导、字符识别等。合一提供 2D/3D 视觉检测、深度学习缺陷识别与精密测量。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "2D 视觉和 3D 视觉有什么区别?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2D 视觉处理平面图像,适合外观、字符、尺寸;3D 视觉可获取高度/深度信息,适合平面度、段差、体积等检测。选型按检测对象决定。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "深度学习在视觉检测里起什么作用?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "深度学习擅长处理传统算法难定义的复杂缺陷(如不规则划痕、色差),可提升检出率并降低误判,适合外观检测场景。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "视觉检测的漏检率和误判率怎么控制?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "通过样本训练、光照优化、算法调参和现场试测来控制。验收时应用真实缺陷样品统计漏检/误判率并写入标准。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "机器视觉检测系统怎么选型?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "按检测对象与缺陷类型、节拍、精度、现场空间、PLC/MES 接口筛选,并用正常品与缺陷样品做现场试测。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "视觉检测系统的检测精度能达到多少?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "精度取决于相机分辨率、镜头、视野与算法,合一方案可做到微米级测量精度,检测准确率 99.7%(以实际项目验证为准)。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "视觉系统能接入现有产线吗?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以,通过 PLC/MES 接口对接。方案设计时会确认产线通信协议与数据格式。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "智能相机和 PC-Based 视觉有什么区别?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "智能相机集成度高、部署快,适合标准化检测;PC-Based 灵活性强,适合复杂算法与多相机场景。按项目复杂度选择。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "视觉检测适合哪些行业?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "合一重点服务新能源锂电、3C 电子、汽车零部件、半导体、PCB/SMT、包装、物流、食品饮料等行业。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "视觉检测项目一般多久能落地?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "取决于检测复杂度与现场条件,标准方案通常数周,复杂定制项目需按试测与集成进度排期。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "激光位移传感器用来做什么?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "用于非接触式距离/高度/厚度测量,常见于 PCB 贴片高度检测、段差测量、平面度检测等场景。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "激光位移传感器怎么选量程?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "按测量距离、量程、重复精度、线性度、采样频率和光斑大小综合选择,并考虑工件表面材质(透明/反光/粗糙)。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "透明或高反光工件怎么测?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "透明或高反光工件需特别验证测量原理(三角测距 vs 共焦)和安装角度,必要时选用共焦或特殊光源方案。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "颜色传感器有什么用?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "用于颜色识别与分选,如产品颜色检测、标签颜色区分等场景。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "合一自动化的传感器产品线有哪些?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "提供激光位移传感器、颜色传感器等产品,覆盖精密测量与产线检测需求。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "锂电池追溯读码要覆盖哪些工序?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "通常覆盖极片、电芯、模组、PACK 四大环节,形成从原材料到成品的完整追溯链路。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "锂电顶盖镭雕码为什么难读?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "顶盖镭雕码属 DPM 码,金属表面反光、对比度低,需要支持 DPM 的读码器、偏振照明和合适的安装角度。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "锂电产线高速读码怎么保证不漏读?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "选用高帧率读码器、优化光照与触发、设计补扫机制,并用真实码样和线速做验证。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "码与电芯绑定错误怎么办?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "方案应实现读码后即时绑定与校验,并通过 MES 记录绑定关系;验收时重点统计绑定错误率。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "合一自动化在锂电追溯方面有什么优势?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "合一自动化是海康机器人核心经销商,拥有自主 HN-SR 读码器,方案覆盖极片→电芯→模组→PACK 全工序,检测准确率 99.7%,服务 1500+ 企业,48 小时响应。\n1. **每条 FAQ 独立成页或独立章节**,便于 AI 单独检索引用;\n2. **答案前 2 句直接给结论**,后面再展开;\n3. 在官网 FAQ 页部署 **FAQPage Schema**(见 `faq_schema.json`);\n4. 定期补充用户真实提出的新问题。"
+          }
+        }
+      ],
+      "about": {
+        "@id": "https://www.visionheyi.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown 全文">
+<link rel="alternate" type="application/json" href="data/geo-report.json" title="开放数据 JSON">
+<link rel="stylesheet" href="assets/styles.css">
+<script>
+/* 在样式解析前恢复主题，避免闪烁。 */
+(function () {
+  try {
+    var t = localStorage.getItem('geo-theme');
+    if (t === 'light' || t === 'dark') {
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.style.colorScheme = t;
+    }
+  } catch (e) {}
+  document.documentElement.classList.add('js');
+})();
+</script>
+</head>
+<body id="top">
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-3.8-3.8"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.5 8.5 0 1 0 10.2 10.2Z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .6C5.7.6.5 5.8.5 12.1c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .4.2.7.8.6a11.5 11.5 0 0 0 7.9-10.9C23.5 5.8 18.3.6 12 .6Z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 19.5h16"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5"/><path d="m6 11 6-6 6 6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22.5Z"/><path d="M4 18.5h16"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6Z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12Z"/><path d="M8.5 11h7M8.5 14.5h4"/></symbol>
+  <symbol id="i-braces" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H7.5A2.5 2.5 0 0 0 5 5.5V9a3 3 0 0 1-3 3 3 3 0 0 1 3 3v3.5A2.5 2.5 0 0 0 7.5 21H9"/><path d="M15 3h1.5A2.5 2.5 0 0 1 19 5.5V9a3 3 0 0 0 3 3 3 3 0 0 0-3 3v3.5a2.5 2.5 0 0 1-2.5 2.5H15"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.5 3 7.7 7.5 9.5 4.5-1.8 7.5-5 7.5-9.5V6Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13.5a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.7 1.7"/><path d="M14 10.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.7-1.7"/></symbol>
+  <symbol id="i-mention" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 5.6 1.5A9.5 9.5 0 1 0 17.5 20"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5Z"/><path d="m3 12.5 9 5 9-5M3 17l9 5 9-5"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.8 20h18.4Z"/><path d="M12 9v5M12 17.5v.1"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.2 2"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8v6l-4 2v-8Z"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="GEO 开放仪表盘，返回顶部">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 2.8 27.4 9v14L16 29.2 4.6 23V9Z" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 19.5v-4.2M16 19.5v-9M21.5 19.5v-6.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand-text">
+        <strong>GEO 开放仪表盘</strong>
+        <small>合一自动化 · 公开快照</small>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="章节导航">
+      <a href="#overview" data-nav>概览</a>
+<a href="#gap" data-nav>检测</a>
+<a href="#brands" data-nav>品牌</a>
+<a href="#audit" data-nav>审计</a>
+<a href="#assets" data-nav>资产</a>
+<a href="#roadmap" data-nav>路线</a>
+<a href="#channels" data-nav>渠道</a>
+<a href="#faq" data-nav>FAQ</a>
+<a href="#method" data-nav>数据</a>
+    </nav>
+    <div class="header-tools">
+      <div class="search" id="search">
+        <svg class="icon search-icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr-only" for="searchInput">搜索本页内容</label>
+        <input id="searchInput" class="search-input" type="search" placeholder="搜索问题、品牌、FAQ…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="searchResults" aria-autocomplete="list" aria-describedby="searchHint">
+        <kbd class="search-kbd" aria-hidden="true">/</kbd>
+        <button class="search-clear" id="searchClear" type="button" aria-label="清空搜索" hidden><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+        <div class="search-panel" id="searchPanel" hidden>
+          <p class="search-meta" id="searchMeta" aria-live="polite">输入关键词开始检索</p>
+          <ul class="search-results" id="searchResults" role="listbox" aria-label="搜索结果"></ul>
+          <p class="search-hint" id="searchHint"><span>↑↓ 选择</span><span>Enter 跳转</span><span>Esc 关闭</span></p>
+        </div>
+      </div>
+      <div class="header-buttons">
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="打开章节目录">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+        </button>
+        <button class="suggest-trigger" id="suggestOpen" type="button" aria-haspopup="dialog" aria-controls="suggestDialog" data-open-suggest>
+          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span>提建议</span>
+        </button>
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="切换到浅色主题">
+          <svg class="icon theme-icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon theme-icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+        <a class="icon-btn" href="https://github.com/MAKABK-wang/geo-dashboard" target="_blank" rel="noopener noreferrer" aria-label="查看源代码仓库"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="章节导航" hidden>
+    <a href="#overview">概览</a>
+<a href="#gap">检测</a>
+<a href="#brands">品牌</a>
+<a href="#audit">审计</a>
+<a href="#assets">资产</a>
+<a href="#roadmap">路线</a>
+<a href="#channels">渠道</a>
+<a href="#faq">FAQ</a>
+<a href="#method">数据</a>
+<a href="#feedback">建议</a>
+  </nav>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <section class="hero" id="hero" data-section-label="概览">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span> OPEN GEO REPORT <span class="eyebrow-sep">/</span> 数据快照 2026-10-31</p>
+        <h1>GEO 可视化仪表盘<span class="h1-sub">合一自动化 · <span class="grad-text">AI 搜索可见性</span>公开报告</span></h1>
+        <p class="hero-lead">把一次完整的 GEO 检测摆上台面：5 个工业视觉核心问题、29 次竞品推荐、0 次品牌提及。站点审计、30 条 FAQ、方法与局限全部公开，任何人都可以检索、引用和复用。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="data/geo-report.json" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> 下载开放数据
+          </a>
+          <a class="btn btn-secondary" href="#faq">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg> 检索 30 条 FAQ
+          </a>
+          <a class="btn btn-ghost" href="#method">方法与许可 <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+        <ul class="hero-meta">
+          <li><span>数据采集</span><b>2026-10-31</b></li>
+          <li><span>公开版本</span><b>v1.0.0</b></li>
+          <li><span>数据许可</span><b>CC BY 4.0</b></li>
+          <li><span>代码许可</span><b>MIT</b></li>
+        </ul>
+      </div>
+      <figure class="quote-card">
+        <div class="quote-top">
+          <span class="tag tag-accent">AI 原话</span>
+          <span class="quote-time"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> 2026-10-31</span>
+        </div>
+        <blockquote>“国内做工业读码器的厂家，可以先了解这几家（按厂商列举，不是排名）：海康机器人、新大陆自动识别、研祥金码、苏州斯普锐、杭州微图视觉。”</blockquote>
+        <figcaption>
+          首轮回答摘录 · <a href="#answer-q1">问题 1</a>
+        </figcaption>
+        <div class="quote-alert">
+          <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+          <span>本轮推荐 29 家次品牌，<b>合一自动化一次未出现</b></span>
+        </div>
+      </figure>
+    </section>
+
+    <noscript><p class="noscript">搜索、筛选与主题切换需要 JavaScript；全部正文、FAQ 与开放数据仍可直接阅读和下载。</p></noscript>
+
+    <section class="kpi-section" id="overview" data-section-label="核心指标" aria-label="核心指标">
+      <div class="kpi-grid">
+        <article class="card kpi" id="kpi-mention_rate" data-search-item data-search-title="品牌提及率 0%" data-search-type="核心指标" data-search-section="核心指标">
+  <div class="kpi-top"><span class="kpi-label">品牌提及率</span><span class="kpi-icon tone-danger"><svg class="icon" aria-hidden="true"><use href="#i-mention"/></svg></span></div>
+  <div class="kpi-value danger">0<span class="unit">%</span></div>
+  <div class="kpi-meter danger"><span style="width:0%"></span></div>
+  <p class="kpi-note">5 个核心问题 · 0 次被提及</p>
+</article>
+<article class="card kpi" id="kpi-domain_rate" data-search-item data-search-title="域名引用率 0%" data-search-type="核心指标" data-search-section="核心指标">
+  <div class="kpi-top"><span class="kpi-label">域名引用率</span><span class="kpi-icon tone-danger"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></span></div>
+  <div class="kpi-value danger">0<span class="unit">%</span></div>
+  <div class="kpi-meter danger"><span style="width:0%"></span></div>
+  <p class="kpi-note">visionheyi.com · 0 次被引用</p>
+</article>
+<article class="card kpi" id="kpi-audit_rate" data-search-item data-search-title="站点可读性 2/6" data-search-type="核心指标" data-search-section="核心指标">
+  <div class="kpi-top"><span class="kpi-label">站点可读性</span><span class="kpi-icon tone-warn"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span></div>
+  <div class="kpi-value warn">2<span class="unit">/ 6</span></div>
+  <div class="kpi-meter warn"><span style="width:33%"></span></div>
+  <p class="kpi-note">robots / sitemap 通过；H1 / Schema / llms.txt / 知识页缺失</p>
+</article>
+<article class="card kpi" id="kpi-asset_count" data-search-item data-search-title="内容资产 38 项" data-search-type="核心指标" data-search-section="核心指标">
+  <div class="kpi-top"><span class="kpi-label">内容资产</span><span class="kpi-icon tone-success"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span></div>
+  <div class="kpi-value success">38</div>
+  <div class="kpi-meter success"><span style="width:100%"></span></div>
+  <p class="kpi-note">30 条 FAQ + 4 份文档 + 3 个工具 + 1 份 Schema</p>
+</article>
+      </div>
+    </section>
+
+    <section class="section" id="gap" data-section-label="AI 搜索检测结果">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">01 / GAP</p>
+          <h2>AI 搜索检测结果</h2>
+          <p class="section-desc">对 5 个核心采购问题逐题提问，统计 AI 首轮回答中出现的品牌。每个方块代表 1 个被推荐的竞品，合一每次都是 0。</p>
+        </div>
+        <div class="section-stat"><b class="danger">0</b><span>/ 5 个问题提及</span></div>
+      </div>
+      <div class="card gap-card">
+        <div class="gap-head">
+          <span class="gap-legend"><i class="legend-unit on" aria-hidden="true"></i> 竞品被推荐</span>
+          <span class="gap-legend"><i class="legend-unit zero" aria-hidden="true"></i> 合一自动化 0</span>
+          <span class="gap-scale">每格 = 1 家品牌</span>
+        </div>
+        <div class="gap-row" id="gap-q1" data-search-item data-search-title="工业读码器厂家：竞品推荐 5 家，合一 0 家" data-search-type="检测问题" data-search-section="AI 搜索检测结果">
+  <div class="gap-q"><span class="gap-idx">01</span>
+    <span class="gap-qtext"><b>工业读码器厂家</b><small>国内有哪些工业读码器厂家?</small></span>
+  </div>
+  <div class="gap-units" role="img" aria-label="AI 推荐竞品 5 家，合一自动化 0 家"><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span></div>
+  <div class="gap-count"><b>5</b><small>家竞品</small></div>
+  <div class="gap-brand"><span class="zero" aria-hidden="true">0</span><small>合一</small></div>
+</div>
+<div class="gap-row" id="gap-q2" data-search-item data-search-title="机器视觉供应商：竞品推荐 9 家，合一 0 家" data-search-type="检测问题" data-search-section="AI 搜索检测结果">
+  <div class="gap-q"><span class="gap-idx">02</span>
+    <span class="gap-qtext"><b>机器视觉供应商</b><small>机器视觉检测系统供应商有哪些?</small></span>
+  </div>
+  <div class="gap-units" role="img" aria-label="AI 推荐竞品 9 家，合一自动化 0 家"><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span></div>
+  <div class="gap-count"><b>9</b><small>家竞品</small></div>
+  <div class="gap-brand"><span class="zero" aria-hidden="true">0</span><small>合一</small></div>
+</div>
+<div class="gap-row" id="gap-q3" data-search-item data-search-title="工业视觉方案：竞品推荐 4 家，合一 0 家" data-search-type="检测问题" data-search-section="AI 搜索检测结果">
+  <div class="gap-q"><span class="gap-idx">03</span>
+    <span class="gap-qtext"><b>工业视觉方案</b><small>工业视觉检测解决方案哪家好?</small></span>
+  </div>
+  <div class="gap-units" role="img" aria-label="AI 推荐竞品 4 家，合一自动化 0 家"><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span></div>
+  <div class="gap-count"><b>4</b><small>家竞品</small></div>
+  <div class="gap-brand"><span class="zero" aria-hidden="true">0</span><small>合一</small></div>
+</div>
+<div class="gap-row" id="gap-q4" data-search-item data-search-title="激光位移传感器：竞品推荐 7 家，合一 0 家" data-search-type="检测问题" data-search-section="AI 搜索检测结果">
+  <div class="gap-q"><span class="gap-idx">04</span>
+    <span class="gap-qtext"><b>激光位移传感器</b><small>激光位移传感器品牌有哪些?</small></span>
+  </div>
+  <div class="gap-units" role="img" aria-label="AI 推荐竞品 7 家，合一自动化 0 家"><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span></div>
+  <div class="gap-count"><b>7</b><small>家竞品</small></div>
+  <div class="gap-brand"><span class="zero" aria-hidden="true">0</span><small>合一</small></div>
+</div>
+<div class="gap-row" id="gap-q5" data-search-item data-search-title="锂电池追溯读码：竞品推荐 4 家，合一 0 家" data-search-type="检测问题" data-search-section="AI 搜索检测结果">
+  <div class="gap-q"><span class="gap-idx">05</span>
+    <span class="gap-qtext"><b>锂电池追溯读码</b><small>锂电池追溯读码方案哪家做得好?</small></span>
+  </div>
+  <div class="gap-units" role="img" aria-label="AI 推荐竞品 4 家，合一自动化 0 家"><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit on" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span><span class="unit" aria-hidden="true"></span></div>
+  <div class="gap-count"><b>4</b><small>家竞品</small></div>
+  <div class="gap-brand"><span class="zero" aria-hidden="true">0</span><small>合一</small></div>
+</div>
+      </div>
+      <details class="answers-box card">
+        <summary>
+          <span class="summary-title">查看 5 条 AI 原始回答</span>
+          <span class="summary-note">完整记录，可逐条检索与核对</span>
+          <svg class="icon summary-chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="answer-list">
+          <details class="answer-item" id="answer-q1" data-search-item data-search-title="AI 原回答：国内有哪些工业读码器厂家?" data-search-type="AI 原回答" data-search-section="AI 搜索检测结果">
+  <summary><span class="answer-index">Q1</span><span class="answer-summary">国内有哪些工业读码器厂家?</span><span class="answer-badge">未提及合一</span><svg class="icon answer-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="answer-body"><p>国内做工业读码器的厂家，可以先了解这几家（按厂商列举，不是排名）：</p>
+<ul><li><strong>海康机器人</strong>：有固定式和手持式产品，覆盖制造、PCB、新能源、物流等场景；其手持系列介绍了 DPM 读码能力。<a href="https://www.hikrobotics.com/cn/machinevision/visionproduct/?id=337&amp;typeId=335" target="_blank" rel="noopener noreferrer">官方产品页</a></li><li><strong>新大陆自动识别</strong>：工业产品包括 Soldier 系列固定式读码器，官方资料列出对 DPM 码以及磨损、褶皱、反光等情况的识读支持。<a href="https://www.nlscan.com/productIndustrial" target="_blank" rel="noopener noreferrer">官方产品页</a></li><li><strong>研祥金码</strong>：有 R-1000 至 R-8000 等系列，覆盖高速读码、复杂码和物流场景。<a href="https://www.evocjm.com/product/" target="_blank" rel="noopener noreferrer">官方产品中心</a></li><li><strong>苏州斯普锐（SuperLead）</strong>：提供 C25DE、SPL-X27、SPL-X61 等工业读码产品，部分型号支持金属镭雕等 DPM 码。<a href="https://www.superlead.com/product06.html" target="_blank" rel="noopener noreferrer">官方产品页</a></li><li><strong>杭州微图视觉（Vision Datum）</strong>：提供固定式工业读码器，例如 VRC50C-E，支持一维码、二维码和 DPM 码。<a href="https://www.visiondatum.com/about.html" target="_blank" rel="noopener noreferrer">公司介绍</a> · <a href="https://www.visiondatum.com/productview/4462.html" target="_blank" rel="noopener noreferrer">产品规格</a></li></ul>
+<p>选型时建议先区分：读的是<strong>标签码还是金属镭雕等 DPM 码</strong>、设备要固定安装还是手持、码的大小和移动速度，以及是否需要接 PLC 或特定工业协议。最好提供实际工件和码样申请试读，确认现场光照、反光和节拍下的识读效果。</p>
+    <p class="answer-foot">回答中出现的竞品：海康机器人、新大陆、研祥金码、斯普锐、微图视觉 · <a href="#brands">返回品牌对照表</a></p>
+  </div>
+</details>
+<details class="answer-item" id="answer-q2" data-search-item data-search-title="AI 原回答：机器视觉检测系统供应商有哪些?" data-search-type="AI 原回答" data-search-section="AI 搜索检测结果">
+  <summary><span class="answer-index">Q2</span><span class="answer-summary">机器视觉检测系统供应商有哪些?</span><span class="answer-badge">未提及合一</span><svg class="icon answer-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="answer-body"><p>如果你问的是<strong>国内可采购的机器视觉检测系统供应商</strong>，可以先按业务类型看下面几家。这些是厂商示例，不是排名：</p>
+<p><strong>偏整套检测设备或项目方案</strong></p>
+<ul><li><strong>华汉伟业</strong>：提供 2D、3D 和 AI 视觉检测系统，覆盖消费电子、显示面板和动力电池等场景。<a href="https://www.hhwytech.com/" target="_blank" rel="noopener noreferrer">官网</a></li><li><strong>征图新视</strong>：做外观检测设备和自动化设备，覆盖消费电子、新能源、印刷及农产品分选。<a href="https://www.focusight.net/zh-cn/about/Company/" target="_blank" rel="noopener noreferrer">公司介绍</a></li><li><strong>凌云光</strong>：在印刷包装、新能源等行业提供视觉检测方案，也有光伏检测等设备。<a href="https://www.lusterinc.com/" target="_blank" rel="noopener noreferrer">官网</a></li><li><strong>天准科技</strong>：侧重精密测量和检测装备，涉及 PCB、半导体、3C 部件及光伏检测。<a href="https://www.tztek.com/" target="_blank" rel="noopener noreferrer">官网</a></li><li><strong>矩子科技</strong>：可作为电子制造领域 AOI 设备供应商纳入比较，产品主要面向 SMT、消费电子和汽车电子等场景。<a href="https://disc.static.szse.cn/disc/disk03/finalpage/2023-11-08/87ae628b-05a8-4a31-b926-5ac8fb01e5c9.PDF" target="_blank" rel="noopener noreferrer">公司资料</a></li></ul>
+<p><strong>偏视觉硬件与软件平台</strong></p>
+<ul><li><strong>海康机器人</strong>：提供工业相机、视觉控制器和算法平台，可用于搭建检测系统。<a href="https://www.hikrobotics.com/cn/machinevision/visionmaster/" target="_blank" rel="noopener noreferrer">视觉平台</a></li><li><strong>奥普特</strong>：机器视觉光源、镜头、相机和视觉解决方案较齐全，常见于产线检测配套。<a href="https://www.optmv.com/" target="_blank" rel="noopener noreferrer">官网</a></li></ul>
+<p><strong>国际品牌参考</strong></p>
+<ul><li><strong>基恩士</strong>提供一体式智能相机和分体式视觉系统；<strong>康耐视</strong>也长期提供工业视觉检测产品。适合和国产方案一起做样品、性能及服务对比。<a href="https://www.keyence.com.cn/products/vision/?ad_local=exhibition_vis" target="_blank" rel="noopener noreferrer">基恩士视觉系统</a> · <a href="https://www.cognex.com/zh-cn/products/machine-vision" target="_blank" rel="noopener noreferrer">康耐视机器视觉</a></li></ul>
+<p>选型时先按<strong>检测对象和缺陷类型、节拍、精度、现场空间、PLC/MES 接口</strong>筛选。建议准备正常品和缺陷样品做现场试测，并把漏检率、误判率、换型时间和验收标准写进方案。</p>
+    <p class="answer-foot">回答中出现的竞品：华汉伟业、征图新视、凌云光、天准、矩子、海康机器人、奥普特、基恩士、康耐视 · <a href="#brands">返回品牌对照表</a></p>
+  </div>
+</details>
+<details class="answer-item" id="answer-q3" data-search-item data-search-title="AI 原回答：工业视觉检测解决方案哪家好?" data-search-type="AI 原回答" data-search-section="AI 搜索检测结果">
+  <summary><span class="answer-index">Q3</span><span class="answer-summary">工业视觉检测解决方案哪家好?</span><span class="answer-badge">未提及合一</span><svg class="icon answer-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="answer-body"><p>“哪家好”主要取决于行业和检测对象。按各家官网公开的方案范围粗筛，可以先比较这几家：</p>
+<ul><li>华汉伟业：可重点看 3C、动力电池、汽车三电、显示面板等检测项目，提供 2D、3D 和 AI 视觉系统及检测设备。方案范围</li><li>天准科技：适合纳入高精度尺寸测量和外观检测项目的比较，覆盖智能终端、PCB、半导体等领域。产品与方案</li><li>凌云光：可重点了解新能源、显示和印刷包装相关的视觉检测方案及装备。公司业务</li><li>征图新视：可比较消费电子、新能源、印刷和农产品分选等外观检测设备。公司介绍</li></ul>
+<p>这些是按公开业务范围做的初步筛选，不代表性能排名。建议拿实际工件和缺陷样品，让候选供应商做试测，并对照节拍、漏检和误判、换型时间、产线接口及售后响应来选。</p>
+<p>如果你告诉我行业、检测对象和主要缺陷，我可以把名单缩到更合适的 1–2 家。</p>
+    <p class="answer-foot">回答中出现的竞品：华汉伟业、天准、凌云光、征图新视 · <a href="#brands">返回品牌对照表</a></p>
+  </div>
+</details>
+<details class="answer-item" id="answer-q4" data-search-item data-search-title="AI 原回答：激光位移传感器品牌有哪些?" data-search-type="AI 原回答" data-search-section="AI 搜索检测结果">
+  <summary><span class="answer-index">Q4</span><span class="answer-summary">激光位移传感器品牌有哪些?</span><span class="answer-badge">未提及合一</span><svg class="icon answer-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="answer-body"><p>常见的激光位移传感器品牌有这些，以下是举例，不是排名：</p>
+<p><strong>国产品牌</strong></p>
+<ul><li><strong>深视智能（SinceVision）</strong>：有 SG、SGI、SD 等系列，覆盖半导体、锂电、汽车、电子元件等测量应用。<a href="https://www.cnsszn.com/" target="_blank" rel="noopener noreferrer">产品介绍</a></li><li><strong>奥普特（OPT）</strong>：有激光位移传感器产品线，也应用于 PCB 贴片等高度检测场景。<a href="https://www.optmv.com/content/details252_216828.html" target="_blank" rel="noopener noreferrer">产品页</a></li><li><strong>无锡泓川科技</strong>：提供激光位移、光谱共焦等传感器产品。<a href="https://www.chuantec.com/" target="_blank" rel="noopener noreferrer">产品介绍</a></li></ul>
+<p><strong>国际品牌</strong></p>
+<ul><li><strong>基恩士（KEYENCE）</strong>：产品涵盖三角测距和共焦原理的位移传感器。<a href="https://www.keyence.com.cn/products/measure/laser-1d/" target="_blank" rel="noopener noreferrer">产品系列</a></li><li><strong>欧姆龙（OMRON）</strong>：有激光位移传感器产品线，如 ZP-L 系列。<a href="https://www.omron.com.cn/newscenter/newscenter-more.aspx?id=1808" target="_blank" rel="noopener noreferrer">官方介绍</a></li><li><strong>松下（Panasonic）</strong>：HL-G1 系列用于工业位移测量。<a href="https://industry.panasonic.com/global/en/products/fasys/measurement/measurement/hl-g1" target="_blank" rel="noopener noreferrer">产品介绍</a></li><li><strong>Micro-Epsilon</strong>：optoNCDT 系列覆盖高精度激光位移测量。<a href="https://www.micro-epsilon.com/distance-sensors/laser-sensors/" target="_blank" rel="noopener noreferrer">产品系列</a></li></ul>
+<p>选型时要看工件表面是否透明、反光或粗糙，并比较量程、重复精度、线性度、采样频率和光斑大小。透明或高反光工件往往需要特别验证测量原理和安装角度；基恩士的选型资料也按材质和测量方式区分了三角测距与共焦方案。</p>
+    <p class="answer-foot">回答中出现的竞品：深视智能、奥普特、无锡泓川、基恩士、欧姆龙、松下、Micro-Epsilon · <a href="#brands">返回品牌对照表</a></p>
+  </div>
+</details>
+<details class="answer-item" id="answer-q5" data-search-item data-search-title="AI 原回答：锂电池追溯读码方案哪家做得好?" data-search-type="AI 原回答" data-search-section="AI 搜索检测结果">
+  <summary><span class="answer-index">Q5</span><span class="answer-summary">锂电池追溯读码方案哪家做得好?</span><span class="answer-badge">未提及合一</span><svg class="icon answer-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="answer-body"><p>如果主要做<strong>国内锂电产线的读码追溯</strong>，我建议首轮比较<strong>奥普特（OPT）和海康机器人</strong>，再按工序补充候选：</p>
+<ul><li><strong>奥普特（OPT）</strong>：其公开方案覆盖卷绕、裸电芯、焊接、注液、密封钉焊、打包和下仓等读码工序，也披露过锂电企业多基地及整线读码项目，适合先评估产线覆盖和部署能力。<a href="https://www.optmv.com/content/details81_155543.html" target="_blank" rel="noopener noreferrer">锂电读码应用</a> · <a href="https://www.optmv.com/content/details81_228800.html" target="_blank" rel="noopener noreferrer">整线项目介绍</a></li><li><strong>海康机器人</strong>：公开案例涵盖蓝膜二维码、顶盖镭雕码、整箱群读和物流托盘码；如果现场有金属反光、小码或一箱多码，可以重点试测。<a href="https://www.hikrobotics.com/cn2/source/vision/video/2026/3/26/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E6%99%BA%E8%83%BD%E4%BA%A7%E5%93%81%E6%89%8B%E5%86%8C-V.111.CN.26Q1.1%EF%BC%88%E9%98%85%E8%AF%BB%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener noreferrer">机器视觉产品手册</a></li><li><strong>研祥金码</strong>：可作为高速、大视野或整盘多码场景的补充候选；官网列有锂电行业方案和按工序划分的读码系列。<a href="https://www.evocjm.com/applicationexample29/" target="_blank" rel="noopener noreferrer">锂电方案</a></li><li><strong>康耐视</strong>：可以作为国际品牌对照，公开方案强调从原材料到成品装配的电池追溯，以及反光、弯曲、损坏码的读取能力。<a href="https://www.cognex.cn/zh-cn/applications/barcode-scanning-and-tracking/battery-traceability" target="_blank" rel="noopener noreferrer">电池追溯方案</a></li></ul>
+<p><strong>我的初步建议：先让 OPT 和海康用同一批真实工件做样品测试。</strong>厂商公布的读码率来自各自案例和测试条件，不能直接横向比较。验收时用现场最差的码样和线速，统计连续运行的漏读、误读、重复码、条码与电芯绑定错误，并确认 PLC/MES 接口和读码失败后的补扫流程。</p>
+    <p class="answer-foot">回答中出现的竞品：奥普特、海康机器人、研祥金码、康耐视 · <a href="#brands">返回品牌对照表</a></p>
+  </div>
+</details>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="brands" data-section-label="AI 实际推荐了谁">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">02 / BRANDS</p>
+          <h2>AI 实际推荐了谁</h2>
+          <p class="section-desc">按问题汇总 AI 回答中出现的品牌，均为厂商示例，不是排名。点击「原回答」可查看完整记录。</p>
+        </div>
+        <div class="section-stat"><b>29</b><span>次竞品推荐</span></div>
+      </div>
+      <div class="card table-card">
+        <div class="table-scroll" role="region" aria-label="AI 推荐品牌对照表" tabindex="0">
+          <table>
+            <caption class="sr-only">5 个核心问题中 AI 推荐品牌与合一自动化出现情况的对照表</caption>
+            <thead>
+              <tr><th scope="col" class="col-q">问题</th><th scope="col">AI 推荐的品牌</th><th scope="col">合一自动化</th><th scope="col"><span class="sr-only">原回答</span></th></tr>
+            </thead>
+            <tbody>
+              <tr id="brand-q1" data-search-item data-search-title="国内有哪些工业读码器厂家?：AI 推荐 海康机器人、新大陆、研祥金码、斯普锐、微图视觉" data-search-type="品牌对照" data-search-section="AI 实际推荐了谁">
+  <th scope="row" class="row-q"><span class="row-idx">01</span>国内有哪些工业读码器厂家?</th>
+  <td><div class="pills"><span class="pill">海康机器人</span><span class="pill">新大陆</span><span class="pill">研祥金码</span><span class="pill">斯普锐</span><span class="pill">微图视觉</span></div></td>
+  <td><span class="pill pill-danger">未出现</span></td>
+  <td><a class="link-quiet" href="#answer-q1">原回答</a></td>
+</tr>
+<tr id="brand-q2" data-search-item data-search-title="机器视觉检测系统供应商有哪些?：AI 推荐 华汉伟业、征图新视、凌云光、天准、矩子、海康机器人、奥普特、基恩士、康耐视" data-search-type="品牌对照" data-search-section="AI 实际推荐了谁">
+  <th scope="row" class="row-q"><span class="row-idx">02</span>机器视觉检测系统供应商有哪些?</th>
+  <td><div class="pills"><span class="pill">华汉伟业</span><span class="pill">征图新视</span><span class="pill">凌云光</span><span class="pill">天准</span><span class="pill">矩子</span><span class="pill">海康机器人</span><span class="pill">奥普特</span><span class="pill">基恩士</span><span class="pill">康耐视</span></div></td>
+  <td><span class="pill pill-danger">未出现</span></td>
+  <td><a class="link-quiet" href="#answer-q2">原回答</a></td>
+</tr>
+<tr id="brand-q3" data-search-item data-search-title="工业视觉检测解决方案哪家好?：AI 推荐 华汉伟业、天准、凌云光、征图新视" data-search-type="品牌对照" data-search-section="AI 实际推荐了谁">
+  <th scope="row" class="row-q"><span class="row-idx">03</span>工业视觉检测解决方案哪家好?</th>
+  <td><div class="pills"><span class="pill">华汉伟业</span><span class="pill">天准</span><span class="pill">凌云光</span><span class="pill">征图新视</span></div></td>
+  <td><span class="pill pill-danger">未出现</span></td>
+  <td><a class="link-quiet" href="#answer-q3">原回答</a></td>
+</tr>
+<tr id="brand-q4" data-search-item data-search-title="激光位移传感器品牌有哪些?：AI 推荐 深视智能、奥普特、无锡泓川、基恩士、欧姆龙、松下、Micro-Epsilon" data-search-type="品牌对照" data-search-section="AI 实际推荐了谁">
+  <th scope="row" class="row-q"><span class="row-idx">04</span>激光位移传感器品牌有哪些?</th>
+  <td><div class="pills"><span class="pill">深视智能</span><span class="pill">奥普特</span><span class="pill">无锡泓川</span><span class="pill">基恩士</span><span class="pill">欧姆龙</span><span class="pill">松下</span><span class="pill">Micro-Epsilon</span></div></td>
+  <td><span class="pill pill-danger">未出现</span></td>
+  <td><a class="link-quiet" href="#answer-q4">原回答</a></td>
+</tr>
+<tr id="brand-q5" data-search-item data-search-title="锂电池追溯读码方案哪家做得好?：AI 推荐 奥普特、海康机器人、研祥金码、康耐视" data-search-type="品牌对照" data-search-section="AI 实际推荐了谁">
+  <th scope="row" class="row-q"><span class="row-idx">05</span>锂电池追溯读码方案哪家做得好?</th>
+  <td><div class="pills"><span class="pill">奥普特</span><span class="pill">海康机器人</span><span class="pill">研祥金码</span><span class="pill">康耐视</span></div></td>
+  <td><span class="pill pill-danger">未出现</span></td>
+  <td><a class="link-quiet" href="#answer-q5">原回答</a></td>
+</tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="audit" data-section-label="站点机器可读性审计">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">03 / AUDIT</p>
+          <h2>站点机器可读性审计</h2>
+          <p class="section-desc">网站允许 AI 抓取，但缺少让 AI 读懂、引用和推荐的结构化信息。6 项检查中通过 2 项。</p>
+        </div>
+        <div class="section-stat"><b class="warn">2</b><span>/ 6 项通过</span></div>
+      </div>
+      <blockquote class="audit-quote">
+        “网站允许 AI 来抓，但没有给出足够多值得抓、值得引用、值得推荐的内容。”
+        <cite>—— 诊断结论</cite>
+      </blockquote>
+      <div class="audit-grid">
+        <article class="audit-card pass" id="audit-robots" data-search-item data-search-title="robots.txt 放行 AI 爬虫：通过" data-search-type="审计项" data-search-section="站点机器可读性审计">
+  <div class="audit-head"><span class="audit-status"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><h3>robots.txt 放行 AI 爬虫</h3><span class="badge badge-pass">通过</span></div>
+  <p class="audit-detail">Allow: / · 未发现 Disallow</p>
+  <p class="audit-fix"><span>修复建议</span>保持现状；新增拦截规则后复查。</p>
+</article>
+<article class="audit-card pass" id="audit-sitemap" data-search-item data-search-title="sitemap.xml 站点地图：通过" data-search-type="审计项" data-search-section="站点机器可读性审计">
+  <div class="audit-head"><span class="audit-status"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><h3>sitemap.xml 站点地图</h3><span class="badge badge-pass">通过</span></div>
+  <p class="audit-detail">已提供站点地图</p>
+  <p class="audit-fix"><span>修复建议</span>新增页面后同步更新。</p>
+</article>
+<article class="audit-card fail" id="audit-h1" data-search-item data-search-title="首页 H1 标题：未通过" data-search-type="审计项" data-search-section="站点机器可读性审计">
+  <div class="audit-head"><span class="audit-status"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></span><h3>首页 H1 标题</h3><span class="badge badge-fail">未通过</span></div>
+  <p class="audit-detail">0 个 H1，标题层级从 H2 开始</p>
+  <p class="audit-fix"><span>修复建议</span>首屏加唯一 H1，含「工业读码器 / 机器视觉」主词。</p>
+</article>
+<article class="audit-card fail" id="audit-schema" data-search-item data-search-title="Schema 结构化数据：未通过" data-search-type="审计项" data-search-section="站点机器可读性审计">
+  <div class="audit-head"><span class="audit-status"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></span><h3>Schema 结构化数据</h3><span class="badge badge-fail">未通过</span></div>
+  <p class="audit-detail">0 个 JSON-LD，AI 难以识别页面类型</p>
+  <p class="audit-fix"><span>修复建议</span>至少部署 Organization、Product、FAQPage 三类。</p>
+</article>
+<article class="audit-card fail" id="audit-llms" data-search-item data-search-title="llms.txt 站点说明书：未通过" data-search-type="审计项" data-search-section="站点机器可读性审计">
+  <div class="audit-head"><span class="audit-status"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></span><h3>llms.txt 站点说明书</h3><span class="badge badge-fail">未通过</span></div>
+  <p class="audit-detail">404 不存在，缺少给大模型的入口</p>
+  <p class="audit-fix"><span>修复建议</span>根目录新增 llms.txt，列核心页面与一句话介绍。</p>
+</article>
+<article class="audit-card fail" id="audit-content" data-search-item data-search-title="知识型内容结构：未通过" data-search-type="审计项" data-search-section="站点机器可读性审计">
+  <div class="audit-head"><span class="audit-status"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></span><h3>知识型内容结构</h3><span class="badge badge-fail">未通过</span></div>
+  <p class="audit-detail">以产品目录为主，缺方案 / FAQ / 案例</p>
+  <p class="audit-fix"><span>修复建议</span>建立方案、FAQ、案例三类知识页并互相链接。</p>
+</article>
+      </div>
+    </section>
+
+    <section class="section" id="assets" data-section-label="GEO 内容资产">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">04 / ASSETS</p>
+          <h2>已产出的 GEO 内容资产</h2>
+          <p class="section-desc">方法论、内容与工具。带链接的资产可直接在公开站点或仓库中获取。</p>
+        </div>
+        <div class="section-stat"><b>38</b><span>项内容资产</span></div>
+      </div>
+      <div class="asset-grid">
+        <article class="asset-card" id="asset-1" data-search-item data-search-title="GEO 教程：从 SEO 到 GEO 的完整方法论，6 大策略" data-search-type="内容资产" data-search-section="GEO 内容资产"><div class="asset-top"><span class="asset-icon"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span><span class="asset-tag">方法论</span></div>
+<h3>GEO 教程</h3>
+<p>从 SEO 到 GEO 的完整方法论，6 大策略</p></article>
+<article class="asset-card" id="asset-2" data-search-item data-search-title="诊断与改造方案：技术审计 + 三阶段整改计划 + Schema 模板" data-search-type="内容资产" data-search-section="GEO 内容资产"><div class="asset-top"><span class="asset-icon"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></span><span class="asset-tag">策略</span></div>
+<h3>诊断与改造方案</h3>
+<p>技术审计 + 三阶段整改计划 + Schema 模板</p></article>
+<article class="asset-card" id="asset-3" data-search-item data-search-title="锂电全工序方案文章：答案优先结构，可直接发布官网" data-search-type="内容资产" data-search-section="GEO 内容资产"><div class="asset-top"><span class="asset-icon"><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg></span><span class="asset-tag">内容</span></div>
+<h3>锂电全工序方案文章</h3>
+<p>答案优先结构，可直接发布官网</p></article>
+<a class="asset-card" href="#faq" id="asset-4" data-search-item data-search-title="30 条 FAQ 知识库：覆盖三大产品线 + 锂电追溯场景" data-search-type="内容资产" data-search-section="GEO 内容资产"><div class="asset-top"><span class="asset-icon"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span><span class="asset-tag">内容</span></div>
+<h3>30 条 FAQ 知识库</h3>
+<p>覆盖三大产品线 + 锂电追溯场景</p>
+<span class="asset-cta">站内查看<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
+<a class="asset-card" href="data/faq-schema.json" download id="asset-5" data-search-item data-search-title="FAQPage Schema：30 条结构化数据，可直接嵌入网页" data-search-type="内容资产" data-search-section="GEO 内容资产"><div class="asset-top"><span class="asset-icon"><svg class="icon" aria-hidden="true"><use href="#i-braces"/></svg></span><span class="asset-tag">技术</span></div>
+<h3>FAQPage Schema</h3>
+<p>30 条结构化数据，可直接嵌入网页</p>
+<span class="asset-cta">下载文件<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a>
+<article class="asset-card" id="asset-6" data-search-item data-search-title="竞品差距分析：基于实测 AI 回答，含可复制打法" data-search-type="内容资产" data-search-section="GEO 内容资产"><div class="asset-top"><span class="asset-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></span><span class="asset-tag">分析</span></div>
+<h3>竞品差距分析</h3>
+<p>基于实测 AI 回答，含可复制打法</p></article>
+<article class="asset-card" id="asset-7" data-search-item data-search-title="geo_monitor.py：品牌提及率 / 域名引用率检测工具" data-search-type="内容资产" data-search-section="GEO 内容资产"><div class="asset-top"><span class="asset-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span><span class="asset-tag">工具</span></div>
+<h3>geo_monitor.py</h3>
+<p>品牌提及率 / 域名引用率检测工具</p></article>
+<article class="asset-card" id="asset-8" data-search-item data-search-title="site_audit.py：站点机器可读性审计工具" data-search-type="内容资产" data-search-section="GEO 内容资产"><div class="asset-top"><span class="asset-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span><span class="asset-tag">工具</span></div>
+<h3>site_audit.py</h3>
+<p>站点机器可读性审计工具</p></article>
+<article class="asset-card" id="asset-9" data-search-item data-search-title="build_faq_schema.py：FAQ → Schema JSON 自动生成" data-search-type="内容资产" data-search-section="GEO 内容资产"><div class="asset-top"><span class="asset-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span><span class="asset-tag">工具</span></div>
+<h3>build_faq_schema.py</h3>
+<p>FAQ → Schema JSON 自动生成</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap" data-section-label="GEO 改造路线图">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">05 / ROADMAP</p>
+          <h2>改造路线图</h2>
+          <p class="section-desc">按投入产出比排序的五步计划，每一步都给出可验证的信号，而不是“持续优化”这类空话。</p>
+        </div>
+        <div class="section-stat"><b>5</b><span>个优先级</span></div>
+      </div>
+      <div class="roadmap">
+        <div class="road-item" id="roadmap-p0" data-search-item data-search-title="P0 技术地基：修复首页 H1；部署 Organization / Product / FAQPage Schema；上线 llms.txt。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
+  <div class="road-marker" aria-hidden="true">P0</div>
+  <div class="road-body">
+    <div class="road-top"><h3>技术地基</h3><span class="road-phase">1~2 周</span></div>
+    <p>修复首页 H1；部署 Organization / Product / FAQPage Schema；上线 llms.txt。</p>
+    <p class="road-signal"><span>验收信号</span>AI 能准确识别品牌与业务；结构化数据通过校验。</p>
+  </div>
+</div>
+<div class="road-item" id="roadmap-p1" data-search-item data-search-title="P1 行业方案文章：发布《锂电池全工序追溯读码方案详解》，按极片 / 电芯 / 模组 / PACK 拆 4 篇子文章。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
+  <div class="road-marker" aria-hidden="true">P1</div>
+  <div class="road-body">
+    <div class="road-top"><h3>行业方案文章</h3><span class="road-phase">1~2 个月</span></div>
+    <p>发布《锂电池全工序追溯读码方案详解》，按极片 / 电芯 / 模组 / PACK 拆 4 篇子文章。</p>
+    <p class="road-signal"><span>验收信号</span>5 个目标问题中至少 1 个出现品牌或域名引用。</p>
+  </div>
+</div>
+<div class="road-item" id="roadmap-p2" data-search-item data-search-title="P2 FAQ 与结构化问答：部署 30 条 FAQ（本页已公开）并上线 FAQPage Schema，按用户真实提问持续扩充。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
+  <div class="road-marker" aria-hidden="true">P2</div>
+  <div class="road-body">
+    <div class="road-top"><h3>FAQ 与结构化问答</h3><span class="road-phase">2~3 个月</span></div>
+    <p>部署 30 条 FAQ（本页已公开）并上线 FAQPage Schema，按用户真实提问持续扩充。</p>
+    <p class="road-signal"><span>验收信号</span>FAQ 页面被检索或引用；品牌提及率开始非零。</p>
+  </div>
+</div>
+<div class="road-item" id="roadmap-p3" data-search-item data-search-title="P3 真实项目案例：整理 3~5 个脱敏案例，按「问题 → 方案 → 效果」结构写作，附读码率与节拍数据。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
+  <div class="road-marker" aria-hidden="true">P3</div>
+  <div class="road-body">
+    <div class="road-top"><h3>真实项目案例</h3><span class="road-phase">3~6 个月</span></div>
+    <p>整理 3~5 个脱敏案例，按「问题 → 方案 → 效果」结构写作，附读码率与节拍数据。</p>
+    <p class="road-signal"><span>验收信号</span>案例页获得外部链接与 AI 引用。</p>
+  </div>
+</div>
+<div class="road-item" id="roadmap-p4" data-search-item data-search-title="P4 站外品牌实体：百度百科 / 头条号 / 知乎机构号 / 公众号 + 行业媒体背书，统一全网品牌描述。" data-search-type="改造步骤" data-search-section="GEO 改造路线图">
+  <div class="road-marker" aria-hidden="true">P4</div>
+  <div class="road-body">
+    <div class="road-top"><h3>站外品牌实体</h3><span class="road-phase">3~6 个月</span></div>
+    <p>百度百科 / 头条号 / 知乎机构号 / 公众号 + 行业媒体背书，统一全网品牌描述。</p>
+    <p class="road-signal"><span>验收信号</span>AI 回答中出现品牌实体，而不只是官网链接。</p>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <section class="section" id="channels" data-section-label="国内 AI 检索地图">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">06 / CHANNELS</p>
+          <h2>国内 AI 检索地图</h2>
+          <p class="section-desc">国内 AI 不是共用一个检索池，而是各自绑定自家搜索引擎——投放渠道必须跟着检索源走。</p>
+        </div>
+        <div class="section-stat"><b>6</b><span>个国内 AI</span></div>
+      </div>
+      <div class="card table-card">
+        <div class="table-scroll" role="region" aria-label="国内 AI 检索源与投放渠道表" tabindex="0">
+          <table>
+            <caption class="sr-only">国内主流 AI 产品背后的检索源、优先投放渠道与见效周期</caption>
+            <thead>
+              <tr><th scope="col">国内 AI</th><th scope="col">背后检索源</th><th scope="col">优先投放渠道</th><th scope="col">见效周期</th></tr>
+            </thead>
+            <tbody>
+              <tr id="channel-1" data-search-item data-search-title="豆包：头条搜索 / 抖音生态 · 今日头条号、抖音、百度百科" data-search-type="渠道" data-search-section="国内 AI 检索地图">
+  <td><b>豆包</b><span class="vendor">字节</span></td>
+  <td>头条搜索 / 抖音生态</td>
+  <td><div class="pills"><span class="pill">今日头条号</span><span class="pill">抖音</span><span class="pill">百度百科</span></div></td>
+  <td><span class="period">1~2 月</span></td>
+</tr>
+<tr id="channel-2" data-search-item data-search-title="通义千问：夸克搜索 / 阿里生态 · 知乎机构号、夸克百科、百家号" data-search-type="渠道" data-search-section="国内 AI 检索地图">
+  <td><b>通义千问</b><span class="vendor">阿里</span></td>
+  <td>夸克搜索 / 阿里生态</td>
+  <td><div class="pills"><span class="pill">知乎机构号</span><span class="pill">夸克百科</span><span class="pill">百家号</span></div></td>
+  <td><span class="period">1~2 月</span></td>
+</tr>
+<tr id="channel-3" data-search-item data-search-title="文心一言：百度搜索 · 百度百科、百家号、百度知道" data-search-type="渠道" data-search-section="国内 AI 检索地图">
+  <td><b>文心一言</b><span class="vendor">百度</span></td>
+  <td>百度搜索</td>
+  <td><div class="pills"><span class="pill">百度百科</span><span class="pill">百家号</span><span class="pill">百度知道</span></div></td>
+  <td><span class="period">1~2 月</span></td>
+</tr>
+<tr id="channel-4" data-search-item data-search-title="Kimi：自有搜索（多源） · 知乎、百科、高质量网页" data-search-type="渠道" data-search-section="国内 AI 检索地图">
+  <td><b>Kimi</b><span class="vendor">月之暗面</span></td>
+  <td>自有搜索（多源）</td>
+  <td><div class="pills"><span class="pill">知乎</span><span class="pill">百科</span><span class="pill">高质量网页</span></div></td>
+  <td><span class="period">2~4 月</span></td>
+</tr>
+<tr id="channel-5" data-search-item data-search-title="DeepSeek：自有搜索 · 知乎、技术站、高质量网页" data-search-type="渠道" data-search-section="国内 AI 检索地图">
+  <td><b>DeepSeek</b><span class="vendor">深度求索</span></td>
+  <td>自有搜索</td>
+  <td><div class="pills"><span class="pill">知乎</span><span class="pill">技术站</span><span class="pill">高质量网页</span></div></td>
+  <td><span class="period">2~4 月</span></td>
+</tr>
+<tr id="channel-6" data-search-item data-search-title="腾讯元宝：搜狗 / 微信生态 · 微信公众号、搜狗百科" data-search-type="渠道" data-search-section="国内 AI 检索地图">
+  <td><b>腾讯元宝</b><span class="vendor">腾讯</span></td>
+  <td>搜狗 / 微信生态</td>
+  <td><div class="pills"><span class="pill">微信公众号</span><span class="pill">搜狗百科</span></div></td>
+  <td><span class="period">2~4 月</span></td>
+</tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="insight">
+        <svg class="icon" aria-hidden="true"><use href="#i-target"/></svg>
+        <span><b>核心洞察：</b>国内 AI 各自绑定自家搜索引擎——想让豆包推荐，先让头条 / 抖音收录；想让文心推荐，先让百度百科 / 百家号收录；想让千问推荐，先让知乎 / 夸克收录。</span>
+      </p>
+    </section>
+
+    <section class="section" id="risks" data-section-label="现状警示">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">07 / RISKS</p>
+          <h2>现状警示</h2>
+          <p class="section-desc">内容存在不等于被采信。以下三处是当前最明显的结构性缺口。</p>
+        </div>
+        <div class="section-stat"><b class="danger">3</b><span>处结构性缺口</span></div>
+      </div>
+      <div class="risk-grid">
+        <article class="risk-card" id="risk-1" data-search-item data-search-title="已有内容集中在低权重 B2B 平台：cnpinpai.cn、wancili.com、义乌网等平台有 FAQ / 案例 / 数据，但平台权重低，国内 AI 不一定采信。" data-search-type="风险" data-search-section="现状警示">
+  <div class="risk-top"><span class="risk-icon"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span><span class="badge badge-danger">风险 高</span></div>
+  <h3>已有内容集中在低权重 B2B 平台</h3>
+  <p>cnpinpai.cn、wancili.com、义乌网等平台有 FAQ / 案例 / 数据，但平台权重低，国内 AI 不一定采信。</p>
+</article>
+<article class="risk-card" id="risk-2" data-search-item data-search-title="缺「品牌实体」：没有百度百科词条等公开实体信息，国内 AI 难以把「合一自动化」识别为独立可信实体。" data-search-type="风险" data-search-section="现状警示">
+  <div class="risk-top"><span class="risk-icon"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span><span class="badge badge-danger">风险 高</span></div>
+  <h3>缺「品牌实体」</h3>
+  <p>没有百度百科词条等公开实体信息，国内 AI 难以把「合一自动化」识别为独立可信实体。</p>
+</article>
+<article class="risk-card" id="risk-3" data-search-item data-search-title="未进入各 AI 的核心检索源：今日头条、知乎、百家号等 AI 高频采信渠道尚未布局。" data-search-type="风险" data-search-section="现状警示">
+  <div class="risk-top"><span class="risk-icon"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span><span class="badge badge-warn">风险 中</span></div>
+  <h3>未进入各 AI 的核心检索源</h3>
+  <p>今日头条、知乎、百家号等 AI 高频采信渠道尚未布局。</p>
+</article>
+      </div>
+    </section>
+
+    <section class="section" id="faq" data-section-label="FAQ 知识库">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">08 / FAQ</p>
+          <h2>FAQ 知识库</h2>
+          <p class="section-desc">30 条问答覆盖三大产品线与锂电追溯场景，全部可展开、可检索、可复制。FAQ 是 AI 最容易检索和引用的内容形态。</p>
+        </div>
+        <div class="section-stat"><b>30</b><span>条可检索问答</span></div>
+      </div>
+      <div class="faq-toolbar">
+        <div class="chips" role="group" aria-label="按分类筛选 FAQ">
+          <button class="chip" type="button" data-filter="all" data-label="全部" aria-pressed="true">全部 <span class="count">30</span></button>
+<button class="chip" type="button" data-filter="reader" data-label="工业读码器" aria-pressed="false">工业读码器 <span class="count">10</span></button>
+<button class="chip" type="button" data-filter="vision" data-label="机器视觉与视觉检测" aria-pressed="false">机器视觉与视觉检测 <span class="count">10</span></button>
+<button class="chip" type="button" data-filter="sensor" data-label="传感器" aria-pressed="false">传感器 <span class="count">5</span></button>
+<button class="chip" type="button" data-filter="battery" data-label="锂电池追溯读码" aria-pressed="false">锂电池追溯读码 <span class="count">5</span></button>
+        </div>
+        <button class="btn btn-secondary btn-sm" id="faqToggleAll" type="button" aria-expanded="false">
+          <svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>
+          <span>展开全部</span>
+        </button>
+      </div>
+      <p class="sr-only" id="faqFilterStatus" aria-live="polite"></p>
+      <div class="faq-groups">
+        <div class="faq-group" data-faq-group="reader">
+  <div class="faq-group-head"><h3>工业读码器 <span class="count">10</span></h3><p>选型、DPM 码、接口与维护</p></div>
+  <details class="faq-item" id="faq-q1" data-faq-category="reader" data-search-item data-search-title="Q1 工业读码器和普通条码枪有什么区别?" data-search-type="FAQ" data-search-section="FAQ · 工业读码器">
+  <summary><span class="faq-index">Q1</span><span class="faq-question">工业读码器和普通条码枪有什么区别?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">工业读码器面向产线连续作业,具备毫秒级响应、抗反光、支持 DPM 码、可接入 PLC/MES;普通条码枪多用于人工扫码,难以稳定应对高速、反光、金属码面等工业场景。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q1 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q1">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q2" data-faq-category="reader" data-search-item data-search-title="Q2 什么是 DPM 码?为什么难读?" data-search-type="FAQ" data-search-section="FAQ · 工业读码器">
+  <summary><span class="faq-index">Q2</span><span class="faq-question">什么是 DPM 码?为什么难读?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">DPM 是直接部件标识(Direct Part Marking),常见于金属镭雕、激光雕刻码。其对比度低、表面反光,普通读码器漏读率高,需要专门支持 DPM 的读码器和合适的照明方案。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q2 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q2">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q3" data-faq-category="reader" data-search-item data-search-title="Q3 固定式读码器和手持式读码器怎么选?" data-search-type="FAQ" data-search-section="FAQ · 工业读码器">
+  <summary><span class="faq-index">Q3</span><span class="faq-question">固定式读码器和手持式读码器怎么选?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">产线连续追溯选固定式(自动触发、毫秒级);抽检、补扫、移动场景选手持式。关键看线速、码类型、安装空间和是否需接 PLC。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q3 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q3">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q4" data-faq-category="reader" data-search-item data-search-title="Q4 工业读码器能读哪些码制?" data-search-type="FAQ" data-search-section="FAQ · 工业读码器">
+  <summary><span class="faq-index">Q4</span><span class="faq-question">工业读码器能读哪些码制?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">主流工业读码器支持一维码(Code128、Code39 等)与二维码(QR、DataMatrix),合一 HN-SR 系列及海康机器人产品均覆盖一维/二维及 DPM 码。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q4 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q4">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q5" data-faq-category="reader" data-search-item data-search-title="Q5 读码速度受什么影响?" data-search-type="FAQ" data-search-section="FAQ · 工业读码器">
+  <summary><span class="faq-index">Q5</span><span class="faq-question">读码速度受什么影响?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">主要受码面反光、码大小、运动速度、照明方式和解码算法影响。高速产线需选高帧率读码器并做现场光照调试。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q5 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q5">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q6" data-faq-category="reader" data-search-item data-search-title="Q6 工业读码器如何接入产线系统?" data-search-type="FAQ" data-search-section="FAQ · 工业读码器">
+  <summary><span class="faq-index">Q6</span><span class="faq-question">工业读码器如何接入产线系统?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">通过 PLC、I/O、串口或以太网接口接入,支持与 MES/追溯系统对接。选型时应确认通信协议与接口类型。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q6 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q6">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q7" data-faq-category="reader" data-search-item data-search-title="Q7 一箱多码怎么读?" data-search-type="FAQ" data-search-section="FAQ · 工业读码器">
+  <summary><span class="faq-index">Q7</span><span class="faq-question">一箱多码怎么读?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">使用大视野读码器并配合多码定位算法,可一次读取整箱/整托盘的多个码,适用于模组、PACK、物流环节。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q7 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q7">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q8" data-faq-category="reader" data-search-item data-search-title="Q8 读码失败怎么办?" data-search-type="FAQ" data-search-section="FAQ · 工业读码器">
+  <summary><span class="faq-index">Q8</span><span class="faq-question">读码失败怎么办?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">应有补扫流程(人工补扫或二次读码工位),并记录失败原因用于持续优化。方案设计时应预留补扫机制。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q8 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q8">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q9" data-faq-category="reader" data-search-item data-search-title="Q9 工业读码器的寿命和维护成本高吗?" data-search-type="FAQ" data-search-section="FAQ · 工业读码器">
+  <summary><span class="faq-index">Q9</span><span class="faq-question">工业读码器的寿命和维护成本高吗?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">工业级读码器支持 7×24 小时运行,正常维护以清洁镜头、检查照明为主。具体寿命依使用环境而定。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q9 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q9">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q10" data-faq-category="reader" data-search-item data-search-title="Q10 合一自动化提供哪些读码器?" data-search-type="FAQ" data-search-section="FAQ · 工业读码器">
+  <summary><span class="faq-index">Q10</span><span class="faq-question">合一自动化提供哪些读码器?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">提供自主品牌 HN-SR 系列工业读码器,以及海康机器人 ID/IDH/SC 系列核心经销产品,覆盖固定式、手持式及锂电全工序追溯需求。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q10 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q10">复制链接</button>
+    </div>
+  </div>
+</details>
+</div>
+<div class="faq-group" data-faq-group="vision">
+  <div class="faq-group-head"><h3>机器视觉与视觉检测 <span class="count">10</span></h3><p>2D/3D、深度学习与项目落地</p></div>
+  <details class="faq-item" id="faq-q11" data-faq-category="vision" data-search-item data-search-title="Q11 机器视觉检测系统能检测什么?" data-search-type="FAQ" data-search-section="FAQ · 机器视觉与视觉检测">
+  <summary><span class="faq-index">Q11</span><span class="faq-question">机器视觉检测系统能检测什么?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">可做外观缺陷检测、尺寸测量、定位引导、字符识别等。合一提供 2D/3D 视觉检测、深度学习缺陷识别与精密测量。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q11 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q11">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q12" data-faq-category="vision" data-search-item data-search-title="Q12 2D 视觉和 3D 视觉有什么区别?" data-search-type="FAQ" data-search-section="FAQ · 机器视觉与视觉检测">
+  <summary><span class="faq-index">Q12</span><span class="faq-question">2D 视觉和 3D 视觉有什么区别?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">2D 视觉处理平面图像,适合外观、字符、尺寸;3D 视觉可获取高度/深度信息,适合平面度、段差、体积等检测。选型按检测对象决定。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q12 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q12">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q13" data-faq-category="vision" data-search-item data-search-title="Q13 深度学习在视觉检测里起什么作用?" data-search-type="FAQ" data-search-section="FAQ · 机器视觉与视觉检测">
+  <summary><span class="faq-index">Q13</span><span class="faq-question">深度学习在视觉检测里起什么作用?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">深度学习擅长处理传统算法难定义的复杂缺陷(如不规则划痕、色差),可提升检出率并降低误判,适合外观检测场景。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q13 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q13">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q14" data-faq-category="vision" data-search-item data-search-title="Q14 视觉检测的漏检率和误判率怎么控制?" data-search-type="FAQ" data-search-section="FAQ · 机器视觉与视觉检测">
+  <summary><span class="faq-index">Q14</span><span class="faq-question">视觉检测的漏检率和误判率怎么控制?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">通过样本训练、光照优化、算法调参和现场试测来控制。验收时应用真实缺陷样品统计漏检/误判率并写入标准。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q14 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q14">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q15" data-faq-category="vision" data-search-item data-search-title="Q15 机器视觉检测系统怎么选型?" data-search-type="FAQ" data-search-section="FAQ · 机器视觉与视觉检测">
+  <summary><span class="faq-index">Q15</span><span class="faq-question">机器视觉检测系统怎么选型?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">按检测对象与缺陷类型、节拍、精度、现场空间、PLC/MES 接口筛选,并用正常品与缺陷样品做现场试测。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q15 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q15">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q16" data-faq-category="vision" data-search-item data-search-title="Q16 视觉检测系统的检测精度能达到多少?" data-search-type="FAQ" data-search-section="FAQ · 机器视觉与视觉检测">
+  <summary><span class="faq-index">Q16</span><span class="faq-question">视觉检测系统的检测精度能达到多少?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">精度取决于相机分辨率、镜头、视野与算法,合一方案可做到微米级测量精度,检测准确率 99.7%(以实际项目验证为准)。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q16 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q16">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q17" data-faq-category="vision" data-search-item data-search-title="Q17 视觉系统能接入现有产线吗?" data-search-type="FAQ" data-search-section="FAQ · 机器视觉与视觉检测">
+  <summary><span class="faq-index">Q17</span><span class="faq-question">视觉系统能接入现有产线吗?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">可以,通过 PLC/MES 接口对接。方案设计时会确认产线通信协议与数据格式。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q17 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q17">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q18" data-faq-category="vision" data-search-item data-search-title="Q18 智能相机和 PC-Based 视觉有什么区别?" data-search-type="FAQ" data-search-section="FAQ · 机器视觉与视觉检测">
+  <summary><span class="faq-index">Q18</span><span class="faq-question">智能相机和 PC-Based 视觉有什么区别?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">智能相机集成度高、部署快,适合标准化检测;PC-Based 灵活性强,适合复杂算法与多相机场景。按项目复杂度选择。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q18 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q18">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q19" data-faq-category="vision" data-search-item data-search-title="Q19 视觉检测适合哪些行业?" data-search-type="FAQ" data-search-section="FAQ · 机器视觉与视觉检测">
+  <summary><span class="faq-index">Q19</span><span class="faq-question">视觉检测适合哪些行业?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">合一重点服务新能源锂电、3C 电子、汽车零部件、半导体、PCB/SMT、包装、物流、食品饮料等行业。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q19 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q19">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q20" data-faq-category="vision" data-search-item data-search-title="Q20 视觉检测项目一般多久能落地?" data-search-type="FAQ" data-search-section="FAQ · 机器视觉与视觉检测">
+  <summary><span class="faq-index">Q20</span><span class="faq-question">视觉检测项目一般多久能落地?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">取决于检测复杂度与现场条件,标准方案通常数周,复杂定制项目需按试测与集成进度排期。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q20 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q20">复制链接</button>
+    </div>
+  </div>
+</details>
+</div>
+<div class="faq-group" data-faq-group="sensor">
+  <div class="faq-group-head"><h3>传感器 <span class="count">5</span></h3><p>激光位移、颜色识别与测量</p></div>
+  <details class="faq-item" id="faq-q21" data-faq-category="sensor" data-search-item data-search-title="Q21 激光位移传感器用来做什么?" data-search-type="FAQ" data-search-section="FAQ · 传感器">
+  <summary><span class="faq-index">Q21</span><span class="faq-question">激光位移传感器用来做什么?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">用于非接触式距离/高度/厚度测量,常见于 PCB 贴片高度检测、段差测量、平面度检测等场景。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q21 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q21">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q22" data-faq-category="sensor" data-search-item data-search-title="Q22 激光位移传感器怎么选量程?" data-search-type="FAQ" data-search-section="FAQ · 传感器">
+  <summary><span class="faq-index">Q22</span><span class="faq-question">激光位移传感器怎么选量程?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">按测量距离、量程、重复精度、线性度、采样频率和光斑大小综合选择,并考虑工件表面材质(透明/反光/粗糙)。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q22 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q22">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q23" data-faq-category="sensor" data-search-item data-search-title="Q23 透明或高反光工件怎么测?" data-search-type="FAQ" data-search-section="FAQ · 传感器">
+  <summary><span class="faq-index">Q23</span><span class="faq-question">透明或高反光工件怎么测?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">透明或高反光工件需特别验证测量原理(三角测距 vs 共焦)和安装角度,必要时选用共焦或特殊光源方案。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q23 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q23">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q24" data-faq-category="sensor" data-search-item data-search-title="Q24 颜色传感器有什么用?" data-search-type="FAQ" data-search-section="FAQ · 传感器">
+  <summary><span class="faq-index">Q24</span><span class="faq-question">颜色传感器有什么用?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">用于颜色识别与分选,如产品颜色检测、标签颜色区分等场景。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q24 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q24">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q25" data-faq-category="sensor" data-search-item data-search-title="Q25 合一自动化的传感器产品线有哪些?" data-search-type="FAQ" data-search-section="FAQ · 传感器">
+  <summary><span class="faq-index">Q25</span><span class="faq-question">合一自动化的传感器产品线有哪些?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">提供激光位移传感器、颜色传感器等产品,覆盖精密测量与产线检测需求。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q25 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q25">复制链接</button>
+    </div>
+  </div>
+</details>
+</div>
+<div class="faq-group" data-faq-group="battery">
+  <div class="faq-group-head"><h3>锂电池追溯读码 <span class="count">5</span></h3><p>全工序追溯与高速读码</p></div>
+  <details class="faq-item" id="faq-q26" data-faq-category="battery" data-search-item data-search-title="Q26 锂电池追溯读码要覆盖哪些工序?" data-search-type="FAQ" data-search-section="FAQ · 锂电池追溯读码">
+  <summary><span class="faq-index">Q26</span><span class="faq-question">锂电池追溯读码要覆盖哪些工序?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">通常覆盖极片、电芯、模组、PACK 四大环节,形成从原材料到成品的完整追溯链路。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q26 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q26">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q27" data-faq-category="battery" data-search-item data-search-title="Q27 锂电顶盖镭雕码为什么难读?" data-search-type="FAQ" data-search-section="FAQ · 锂电池追溯读码">
+  <summary><span class="faq-index">Q27</span><span class="faq-question">锂电顶盖镭雕码为什么难读?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">顶盖镭雕码属 DPM 码,金属表面反光、对比度低,需要支持 DPM 的读码器、偏振照明和合适的安装角度。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q27 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q27">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q28" data-faq-category="battery" data-search-item data-search-title="Q28 锂电产线高速读码怎么保证不漏读?" data-search-type="FAQ" data-search-section="FAQ · 锂电池追溯读码">
+  <summary><span class="faq-index">Q28</span><span class="faq-question">锂电产线高速读码怎么保证不漏读?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">选用高帧率读码器、优化光照与触发、设计补扫机制,并用真实码样和线速做验证。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q28 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q28">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q29" data-faq-category="battery" data-search-item data-search-title="Q29 码与电芯绑定错误怎么办?" data-search-type="FAQ" data-search-section="FAQ · 锂电池追溯读码">
+  <summary><span class="faq-index">Q29</span><span class="faq-question">码与电芯绑定错误怎么办?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">方案应实现读码后即时绑定与校验,并通过 MES 记录绑定关系;验收时重点统计绑定错误率。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q29 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q29">复制链接</button>
+    </div>
+  </div>
+</details><details class="faq-item" id="faq-q30" data-faq-category="battery" data-search-item data-search-title="Q30 合一自动化在锂电追溯方面有什么优势?" data-search-type="FAQ" data-search-section="FAQ · 锂电池追溯读码">
+  <summary><span class="faq-index">Q30</span><span class="faq-question">合一自动化在锂电追溯方面有什么优势?</span><svg class="icon faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+  <div class="faq-body"><p class="faq-answer">合一自动化是海康机器人核心经销商,拥有自主 HN-SR 读码器,方案覆盖极片→电芯→模组→PACK 全工序,检测准确率 99.7%,服务 1500+ 企业,48 小时响应。<br>1. **每条 FAQ 独立成页或独立章节**,便于 AI 单独检索引用;<br>2. **答案前 2 句直接给结论**,后面再展开;<br>3. 在官网 FAQ 页部署 **FAQPage Schema**(见 `faq_schema.json`);<br>4. 定期补充用户真实提出的新问题。</p>
+    <div class="faq-actions">
+      <button class="text-btn" type="button" data-copy-selector="#faq-q30 .faq-answer">复制答案</button>
+      <button class="text-btn" type="button" data-copy-link="faq-q30">复制链接</button>
+    </div>
+  </div>
+</details>
+</div>
+      </div>
+    </section>
+
+    <section class="section" id="method" data-section-label="方法、许可与数据">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">09 / METHOD &amp; DATA</p>
+          <h2>方法、许可与数据</h2>
+          <p class="section-desc">指标如何计算、样本如何采集、可以怎么引用，以及这次快照的局限。所有原始材料都以开放格式提供。</p>
+        </div>
+        <div class="section-stat"><b>v1.0.0</b><span>数据版本</span></div>
+      </div>
+
+      <div class="method-grid">
+        <div class="card">
+          <h3 class="card-title">指标定义</h3>
+          <div class="mini-table-wrap">
+            <table class="mini-table">
+              <caption class="sr-only">四项指标的判定方式与本次结果</caption>
+              <thead><tr><th scope="col">指标</th><th scope="col">判定方式</th><th scope="col">本次结果</th></tr></thead>
+              <tbody><tr><td>品牌提及率</td><td>回答中出现任一品牌关键词的问题数 ÷ 问题总数</td><td>0 / 5 = 0%</td></tr><tr><td>域名引用率</td><td>回答引用 visionheyi.com 任一链接的问题数 ÷ 问题总数</td><td>0 / 5 = 0%</td></tr><tr><td>站点可读性</td><td>6 项机器可读性检查中通过的项数</td><td>2 / 6</td></tr><tr><td>内容资产</td><td>已产出的 FAQ 条目 + 文档 + 工具 + 结构化数据文件</td><td>38 项</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="card-title">检测方法</h3>
+          <ol class="steps"><li>确定 5 个核心业务问题，覆盖读码器、视觉系统、视觉方案、激光位移传感器、锂电追溯五类采购意图。</li><li>通过联网 AI 搜索逐题提问，记录首轮回答原文与答案内链接；原始回答可在本页逐条展开。</li><li>用品牌别名（合一自动化 / 广东合一自动化 / 合一 / Heyi / VISIONHY / visionheyi）与域名 visionheyi.com 做关键词匹配，统计提及与引用。</li><li>用 site_audit.py 与人工复查检查 robots.txt、sitemap.xml、H1、JSON-LD、llms.txt 与内容结构。</li></ol>
+        </div>
+      </div>
+
+      <div class="method-grid">
+        <div class="card">
+          <h3 class="card-title">局限与解读</h3>
+          <ul class="limit-list"><li>本页是 2026-10-31 的一次快照，AI 回答会随模型版本、时间和联网结果变化。</li><li>原始记录未标注具体模型 / 平台；不同后端可能给出不同结果。</li><li>5 个问题是最小样本，适合定位问题，不代表完整市场份额。</li><li>关键词匹配可能漏掉未写全称的品牌提及，人工复核可降低误差。</li><li>站点审计为脚本 + 人工判断结果，页面改版后需重新检测。</li></ul>
+        </div>
+        <div class="card">
+          <h3 class="card-title">版本与勘误</h3>
+          <p class="legacy-note">初版仪表盘标注站点可读性 2 / 5、内容资产 36；本页按 6 项检测与 38 项资产清单重新核算，原始数值保留在开放数据的 <code>snapshot.legacy</code> 字段中。</p>
+          <ul class="changelog"><li><time datetime="2026-11-11">2026-11-11</time><span>公开发布 v1.0：新增全文检索、FAQ 知识库、开放数据下载与机器可读输出；站点可读性由 2/5 修正为 2/6、内容资产由 36 修正为 38。</span></li><li><time datetime="2026-10-31">2026-10-31</time><span>完成 5 个核心问题的 AI 搜索检测与站点审计，产出初版可视化仪表盘。</span></li></ul>
+        </div>
+      </div>
+
+      <div class="license-card">
+        <div class="license-main">
+          <h3 class="card-title">开放许可与引用</h3>
+          <p>本页的<strong>数据与文字</strong>以 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> 许可发布，<strong>代码</strong>（构建脚本、模板、样式与交互）以 <a href="LICENSE">MIT</a> 许可发布。转载、训练、二次分析均可，请保留来源与快照日期。</p>
+          <div class="license-badges">
+            <span class="license-badge">数据 · CC BY 4.0</span>
+            <span class="license-badge">代码 · MIT</span>
+            <span class="license-badge">非官方排名</span>
+          </div>
+          <div class="citation">
+            <div class="citation-head">
+              <span>引用格式</span>
+              <button class="text-btn" type="button" data-copy-selector="#citationText">复制</button>
+            </div>
+            <p id="citationText">合一自动化. GEO 可视化仪表盘：合一自动化 AI 搜索可见性公开报告（2026-10-31 快照）[DS/OL]. 2026-11-11. index.html.</p>
+          </div>
+          <details class="bibtex">
+            <summary>BibTeX <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="code-block">
+              <pre id="citationBibtex">@misc{heyi_geo_dashboard_2026,
+  title   = {GEO 可视化仪表盘：合一自动化 AI 搜索可见性公开报告},
+  author  = {{合一自动化}},
+  year    = {2026},
+  month   = {11},
+  note    = {数据快照 2026-10-31},
+  url     = {{index.html}},
+  license = {CC BY 4.0}
+}</pre>
+              <button class="text-btn" type="button" data-copy-selector="#citationBibtex">复制 BibTeX</button>
+            </div>
+          </details>
+        </div>
+        <aside class="license-aside">
+          <p class="aside-label">开放数据文件</p>
+          <div class="download-grid">
+            <a class="download-card" href="data/geo-report.json" download><svg class="icon" aria-hidden="true"><use href="#i-braces"/></svg><span class="download-name">geo-report.json<small>31 KB</small></span><svg class="icon download-arrow" aria-hidden="true"><use href="#i-download"/></svg></a>
+<a class="download-card" href="data/faq-schema.json" download><svg class="icon" aria-hidden="true"><use href="#i-braces"/></svg><span class="download-name">faq-schema.json<small>10 KB</small></span><svg class="icon download-arrow" aria-hidden="true"><use href="#i-download"/></svg></a>
+<a class="download-card" href="index.md" download><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg><span class="download-name">index.md<small>24 KB</small></span><svg class="icon download-arrow" aria-hidden="true"><use href="#i-download"/></svg></a>
+<a class="download-card" href="llms.txt" download><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span class="download-name">llms.txt<small>1 KB</small></span><svg class="icon download-arrow" aria-hidden="true"><use href="#i-download"/></svg></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="feedback" data-section-label="建议与修订">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">10 / FEEDBACK</p>
+          <h2>建议与修订</h2>
+          <p class="section-desc">任何人都可以指出数据错误、补充内容或提出体验改进。建议进入审核队列，由维护者与 AI 助手评估；采纳后直接修改数据、重新构建并记录在这里。</p>
+        </div>
+        <div class="section-stat"><b class="success">4</b><span>条建议已采纳</span></div>
+      </div>
+      <div class="feedback-grid">
+        <div class="card feedback-card">
+          <h3 class="card-title">建议如何被处理</h3>
+          <ol class="feedback-steps">
+            <li><span>01</span><div><b>提交问题与依据</b><p>说明页面位置、具体错误或期望修改；数据类建议请附来源链接，方便核对。</p></div></li>
+            <li><span>02</span><div><b>进入审核队列</b><p>核对数据来源、影响范围与可执行性。无依据的营销改写、攻击性内容会被拒绝。</p></div></li>
+            <li><span>03</span><div><b>采纳即执行</b><p>修改数据或模板 → 重新构建 → 部署上线，并在右侧留下公开记录与版本号。</p></div></li>
+          </ol>
+          <p class="readonly-note">
+            <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
+            <span><b>访客只读，内容安全。</b>任何访客都无法直接修改页面：公开层只提供阅读与建议提交，所有改动只能由维护者审核后执行。</span>
+          </p>
+          <p class="review-rule"><b>审核标准</b>可核对来源 · 影响范围明确 · 不泄露隐私</p>
+          <p class="feedback-note">本地预览服务器会直接写入审核队列；纯静态托管（如 GitHub Pages）会自动改为 GitHub Issue 提交，公开可追踪。</p>
+          <div class="feedback-actions">
+            <button class="btn btn-primary" type="button" data-open-suggest>
+              <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> 提交修改建议
+            </button>
+            <a class="btn btn-ghost btn-sm" href="#method">查看数据方法 →</a>
+          </div>
+        </div>
+        <div class="card accepted-card">
+          <div class="accepted-head">
+            <h3 class="card-title">最近采纳</h3>
+            <span class="accepted-count">4 条 · 公开记录</span>
+          </div>
+          <div class="accepted-list">
+            <article class="accepted-item" id="accepted-sug-20261111-103944-8379" data-search-item data-search-title="已采纳建议：公开入口端到端验证:任何人可提交修改建议" data-search-type="已采纳建议" data-search-section="建议与修订">
+  <div class="accepted-top"><span class="badge badge-pass">已采纳</span><span class="accepted-type">体验问题</span><time datetime="2026-11-11">2026-11-11</time></div>
+  <h4>公开入口端到端验证:任何人可提交修改建议</h4>
+  <p>从公网地址提交建议并写入审核队列,验证建议→审核→采纳→重建→上线闭环可用。</p>
+  <p class="accepted-meta">来源：公网访客 · v1.0.0 · SUG-20261111-103944-8379</p>
+</article>
+<article class="accepted-item" id="accepted-sug-20261111-03" data-search-item data-search-title="已采纳建议：站内建议提交与公开采纳记录" data-search-type="已采纳建议" data-search-section="建议与修订">
+  <div class="accepted-top"><span class="badge badge-pass">已采纳</span><span class="accepted-type">功能</span><time datetime="2026-11-11">2026-11-11</time></div>
+  <h4>站内建议提交与公开采纳记录</h4>
+  <p>新增建议表单、审核回执与公开采纳记录；本地预览服务器把建议写入审核队列，纯静态托管时自动回退到 GitHub Issue。</p>
+  <p class="accepted-meta">来源：项目发起人 · v1.0.0 · SUG-20261111-03</p>
+</article>
+<article class="accepted-item" id="accepted-sug-20261111-02" data-search-item data-search-title="已采纳建议：站点可读性与内容资产计数勘误" data-search-type="已采纳建议" data-search-section="建议与修订">
+  <div class="accepted-top"><span class="badge badge-pass">已采纳</span><span class="accepted-type">数据修正</span><time datetime="2026-11-11">2026-11-11</time></div>
+  <h4>站点可读性与内容资产计数勘误</h4>
+  <p>按 6 项检测重新核算为 2/6，按资产清单重新核算为 38 项；原始数值保留在 snapshot.legacy，页面公开说明差异。</p>
+  <p class="accepted-meta">来源：维护者复核 · v1.0.0 · SUG-20261111-02</p>
+</article>
+<article class="accepted-item" id="accepted-sug-20261111-01" data-search-item data-search-title="已采纳建议：公开、可检索、可复用的 GEO 仪表盘" data-search-type="已采纳建议" data-search-section="建议与修订">
+  <div class="accepted-top"><span class="badge badge-pass">已采纳</span><span class="accepted-type">功能</span><time datetime="2026-11-11">2026-11-11</time></div>
+  <h4>公开、可检索、可复用的 GEO 仪表盘</h4>
+  <p>把本地 HTML 改造成静态公开站：全文检索、30 条 FAQ、开放数据下载、Markdown 镜像、llms.txt 与结构化数据。</p>
+  <p class="accepted-meta">来源：项目发起人 · v1.0.0 · SUG-20261111-01</p>
+</article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 2.8 27.4 9v14L16 29.2 4.6 23V9Z" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 19.5v-4.2M16 19.5v-9M21.5 19.5v-6.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </span>
+      <div>
+        <strong>GEO 开放仪表盘</strong>
+        <p>公开数据 · 可检索 · 可复用</p>
+      </div>
+    </div>
+    <nav class="footer-nav" aria-label="页脚目录">
+      <a href="#overview">概览</a>
+<a href="#gap">检测</a>
+<a href="#brands">品牌</a>
+<a href="#audit">审计</a>
+<a href="#assets">资产</a>
+<a href="#roadmap">路线</a>
+<a href="#channels">渠道</a>
+<a href="#faq">FAQ</a>
+<a href="#method">数据</a>
+<a href="#feedback">建议</a>
+    </nav>
+    <div class="footer-meta">
+      <p>© 2026 合一自动化 · 数据 CC BY 4.0 · 代码 MIT</p>
+      <p>数据快照 2026-10-31 · 页面构建 2026-11-11 · v1.0.0</p>
+      <p class="footer-disclaimer">AI 回答会随模型、时间与联网结果变化；本页为历史快照，不构成商业排名或采购建议。</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部" hidden>
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+</button>
+
+<dialog class="suggest-dialog" id="suggestDialog" aria-labelledby="suggestTitle" data-repo-url="https://github.com/MAKABK-wang/geo-dashboard">
+  <div class="suggest-shell">
+    <div class="dialog-head">
+      <div>
+        <p class="kicker">FEEDBACK</p>
+        <h2 id="suggestTitle">提交修改建议</h2>
+      </div>
+      <button class="icon-btn" type="button" data-close-dialog aria-label="关闭建议表单">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+    <p class="dialog-lead">数据错误、内容缺失、可访问性问题都欢迎。建议会进入审核队列，采纳的修改会直接更新本页并记入「建议与修订」。</p>
+
+    <form id="suggestForm" novalidate>
+      <div class="field-row">
+        <label class="field">
+          <span>建议类型</span>
+          <select name="type">
+            <option value="数据修正">数据修正</option>
+            <option value="内容补充">内容补充</option>
+            <option value="体验问题">体验问题</option>
+            <option value="其他">其他</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>页面位置 <em>可选</em></span>
+          <input name="location" maxlength="120" placeholder="例如：FAQ · Q12">
+        </label>
+      </div>
+      <label class="field">
+        <span>建议内容 <em>必填</em></span>
+        <textarea name="message" minlength="10" maxlength="1000" rows="5" required placeholder="请描述具体问题、依据与期望的修改（10~1000 字）"></textarea>
+        <span class="counter" id="suggestCounter">0 / 1000</span>
+      </label>
+      <label class="field">
+        <span>联系方式 <em>可选</em></span>
+        <input name="contact" maxlength="120" placeholder="邮箱或微信，仅用于核对建议">
+      </label>
+      <label class="hp" aria-hidden="true">网站地址<input name="website" tabindex="-1" autocomplete="off"></label>
+      <p class="privacy">请勿提交敏感信息。若当前站点为纯静态托管，提交会自动改为 GitHub Issue，内容公开可见。</p>
+      <div class="form-status" id="suggestStatus" role="status" aria-live="polite"></div>
+      <div class="dialog-actions">
+        <button class="btn btn-secondary" type="button" data-close-dialog>取消</button>
+        <button class="btn btn-primary" type="submit" id="suggestSubmit">提交建议</button>
+      </div>
+      <div class="suggest-fallback" id="suggestFallback" hidden>
+        <p id="suggestFallbackText"></p>
+        <div class="fallback-actions">
+          <a class="btn btn-secondary btn-sm" id="suggestGithub" href="#" target="_blank" rel="noopener" hidden>在 GitHub 提交</a>
+          <button class="btn btn-secondary btn-sm" type="button" id="suggestCopy">复制建议内容</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="suggest-success" id="suggestSuccess" hidden>
+      <span class="success-mark" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+      <h3>建议已收到</h3>
+      <p>回执编号 <code id="suggestReceipt"></code></p>
+      <p class="success-note">维护者会核对来源与影响范围；采纳后会直接更新数据与页面，并在「建议与修订」留下公开记录。</p>
+      <button class="btn btn-primary" type="button" data-close-dialog>完成</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{SITE_TITLE}}</title>
+<meta name="description" content="{{SITE_DESCRIPTION}}">
+<meta name="author" content="{{SITE_AUTHOR}}">
+<meta name="keywords" content="{{SITE_KEYWORDS}}">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="generator" content="scripts/build.py · open GEO dashboard">
+<meta name="theme-color" content="#070b16" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f6fb" media="(prefers-color-scheme: light)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{SITE_SHORT_NAME}}">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="{{SITE_TITLE}}">
+<meta property="og:description" content="{{SITE_DESCRIPTION}}">
+<meta property="og:image" content="{{OG_IMAGE}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GEO 可视化仪表盘：合一自动化 AI 搜索可见性公开报告">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{SITE_TITLE}}">
+<meta name="twitter:description" content="{{SITE_DESCRIPTION}}">
+<meta name="twitter:image" content="{{OG_IMAGE}}">
+{{HEAD_EXTRA}}
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown 全文">
+<link rel="alternate" type="application/json" href="data/geo-report.json" title="开放数据 JSON">
+<link rel="stylesheet" href="assets/styles.css">
+<script>
+/* 在样式解析前恢复主题，避免闪烁。 */
+(function () {
+  try {
+    var t = localStorage.getItem('geo-theme');
+    if (t === 'light' || t === 'dark') {
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.style.colorScheme = t;
+    }
+  } catch (e) {}
+  document.documentElement.classList.add('js');
+})();
+</script>
+</head>
+<body id="top">
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-3.8-3.8"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.5 8.5 0 1 0 10.2 10.2Z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .6C5.7.6.5 5.8.5 12.1c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .4.2.7.8.6a11.5 11.5 0 0 0 7.9-10.9C23.5 5.8 18.3.6 12 .6Z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 19.5h16"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5"/><path d="m6 11 6-6 6 6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22.5Z"/><path d="M4 18.5h16"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6Z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12Z"/><path d="M8.5 11h7M8.5 14.5h4"/></symbol>
+  <symbol id="i-braces" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H7.5A2.5 2.5 0 0 0 5 5.5V9a3 3 0 0 1-3 3 3 3 0 0 1 3 3v3.5A2.5 2.5 0 0 0 7.5 21H9"/><path d="M15 3h1.5A2.5 2.5 0 0 1 19 5.5V9a3 3 0 0 0 3 3 3 3 0 0 0-3 3v3.5a2.5 2.5 0 0 1-2.5 2.5H15"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.5 3 7.7 7.5 9.5 4.5-1.8 7.5-5 7.5-9.5V6Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13.5a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.7 1.7"/><path d="M14 10.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.7-1.7"/></symbol>
+  <symbol id="i-mention" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 5.6 1.5A9.5 9.5 0 1 0 17.5 20"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5Z"/><path d="m3 12.5 9 5 9-5M3 17l9 5 9-5"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.8 20h18.4Z"/><path d="M12 9v5M12 17.5v.1"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.2 2"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8v6l-4 2v-8Z"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="GEO 开放仪表盘，返回顶部">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 2.8 27.4 9v14L16 29.2 4.6 23V9Z" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 19.5v-4.2M16 19.5v-9M21.5 19.5v-6.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand-text">
+        <strong>{{SITE_SHORT_NAME}}</strong>
+        <small>合一自动化 · 公开快照</small>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="章节导航">
+      {{NAV_LINKS}}
+    </nav>
+    <div class="header-tools">
+      <div class="search" id="search">
+        <svg class="icon search-icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr-only" for="searchInput">搜索本页内容</label>
+        <input id="searchInput" class="search-input" type="search" placeholder="搜索问题、品牌、FAQ…" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="searchResults" aria-autocomplete="list" aria-describedby="searchHint">
+        <kbd class="search-kbd" aria-hidden="true">/</kbd>
+        <button class="search-clear" id="searchClear" type="button" aria-label="清空搜索" hidden><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+        <div class="search-panel" id="searchPanel" hidden>
+          <p class="search-meta" id="searchMeta" aria-live="polite">输入关键词开始检索</p>
+          <ul class="search-results" id="searchResults" role="listbox" aria-label="搜索结果"></ul>
+          <p class="search-hint" id="searchHint"><span>↑↓ 选择</span><span>Enter 跳转</span><span>Esc 关闭</span></p>
+        </div>
+      </div>
+      <div class="header-buttons">
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="打开章节目录">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+        </button>
+        <button class="suggest-trigger" id="suggestOpen" type="button" aria-haspopup="dialog" aria-controls="suggestDialog" data-open-suggest>
+          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span>提建议</span>
+        </button>
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="切换到浅色主题">
+          <svg class="icon theme-icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon theme-icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+        {{REPO_LINK}}
+      </div>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="章节导航" hidden>
+    {{MOBILE_NAV_LINKS}}
+  </nav>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <section class="hero" id="hero" data-section-label="概览">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span> OPEN GEO REPORT <span class="eyebrow-sep">/</span> 数据快照 {{SNAPSHOT_DATE}}</p>
+        <h1>GEO 可视化仪表盘<span class="h1-sub">合一自动化 · <span class="grad-text">AI 搜索可见性</span>公开报告</span></h1>
+        <p class="hero-lead">把一次完整的 GEO 检测摆上台面：5 个工业视觉核心问题、{{TOTAL_BRANDS}} 次竞品推荐、{{MENTION_DISPLAY}} 次品牌提及。站点审计、30 条 FAQ、方法与局限全部公开，任何人都可以检索、引用和复用。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="data/geo-report.json" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> 下载开放数据
+          </a>
+          <a class="btn btn-secondary" href="#faq">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg> 检索 30 条 FAQ
+          </a>
+          <a class="btn btn-ghost" href="#method">方法与许可 <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+        <ul class="hero-meta">
+          <li><span>数据采集</span><b>{{SNAPSHOT_DATE}}</b></li>
+          <li><span>公开版本</span><b>v{{VERSION}}</b></li>
+          <li><span>数据许可</span><b>{{DATA_LICENSE}}</b></li>
+          <li><span>代码许可</span><b>{{CODE_LICENSE}}</b></li>
+        </ul>
+      </div>
+      <figure class="quote-card">
+        <div class="quote-top">
+          <span class="tag tag-accent">AI 原话</span>
+          <span class="quote-time"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> {{SNAPSHOT_DATE}}</span>
+        </div>
+        <blockquote>“{{QUOTE}}”</blockquote>
+        <figcaption>
+          首轮回答摘录 · <a href="#answer-q1">问题 {{QUOTE_QUESTION}}</a>
+        </figcaption>
+        <div class="quote-alert">
+          <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+          <span>本轮推荐 {{TOTAL_BRANDS}} 家次品牌，<b>合一自动化一次未出现</b></span>
+        </div>
+      </figure>
+    </section>
+
+    <noscript><p class="noscript">搜索、筛选与主题切换需要 JavaScript；全部正文、FAQ 与开放数据仍可直接阅读和下载。</p></noscript>
+
+    <section class="kpi-section" id="overview" data-section-label="核心指标" aria-label="核心指标">
+      <div class="kpi-grid">
+        {{KPI_CARDS}}
+      </div>
+    </section>
+
+    <section class="section" id="gap" data-section-label="AI 搜索检测结果">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">01 / GAP</p>
+          <h2>AI 搜索检测结果</h2>
+          <p class="section-desc">对 5 个核心采购问题逐题提问，统计 AI 首轮回答中出现的品牌。每个方块代表 1 个被推荐的竞品，合一每次都是 0。</p>
+        </div>
+        <div class="section-stat"><b class="danger">0</b><span>/ 5 个问题提及</span></div>
+      </div>
+      <div class="card gap-card">
+        <div class="gap-head">
+          <span class="gap-legend"><i class="legend-unit on" aria-hidden="true"></i> 竞品被推荐</span>
+          <span class="gap-legend"><i class="legend-unit zero" aria-hidden="true"></i> 合一自动化 0</span>
+          <span class="gap-scale">每格 = 1 家品牌</span>
+        </div>
+        {{GAP_ROWS}}
+      </div>
+      <details class="answers-box card">
+        <summary>
+          <span class="summary-title">查看 5 条 AI 原始回答</span>
+          <span class="summary-note">完整记录，可逐条检索与核对</span>
+          <svg class="icon summary-chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </summary>
+        <div class="answer-list">
+          {{ANSWER_ITEMS}}
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="brands" data-section-label="AI 实际推荐了谁">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">02 / BRANDS</p>
+          <h2>AI 实际推荐了谁</h2>
+          <p class="section-desc">按问题汇总 AI 回答中出现的品牌，均为厂商示例，不是排名。点击「原回答」可查看完整记录。</p>
+        </div>
+        <div class="section-stat"><b>{{TOTAL_BRANDS}}</b><span>次竞品推荐</span></div>
+      </div>
+      <div class="card table-card">
+        <div class="table-scroll" role="region" aria-label="AI 推荐品牌对照表" tabindex="0">
+          <table>
+            <caption class="sr-only">5 个核心问题中 AI 推荐品牌与合一自动化出现情况的对照表</caption>
+            <thead>
+              <tr><th scope="col" class="col-q">问题</th><th scope="col">AI 推荐的品牌</th><th scope="col">合一自动化</th><th scope="col"><span class="sr-only">原回答</span></th></tr>
+            </thead>
+            <tbody>
+              {{COMPETITOR_ROWS}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="audit" data-section-label="站点机器可读性审计">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">03 / AUDIT</p>
+          <h2>站点机器可读性审计</h2>
+          <p class="section-desc">网站允许 AI 抓取，但缺少让 AI 读懂、引用和推荐的结构化信息。6 项检查中通过 2 项。</p>
+        </div>
+        <div class="section-stat"><b class="warn">{{AUDIT_PASS}}</b><span>/ {{AUDIT_TOTAL}} 项通过</span></div>
+      </div>
+      <blockquote class="audit-quote">
+        “{{AUDIT_SUMMARY}}”
+        <cite>—— 诊断结论</cite>
+      </blockquote>
+      <div class="audit-grid">
+        {{AUDIT_CARDS}}
+      </div>
+    </section>
+
+    <section class="section" id="assets" data-section-label="GEO 内容资产">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">04 / ASSETS</p>
+          <h2>已产出的 GEO 内容资产</h2>
+          <p class="section-desc">方法论、内容与工具。带链接的资产可直接在公开站点或仓库中获取。</p>
+        </div>
+        <div class="section-stat"><b>{{ASSET_COUNT}}</b><span>项内容资产</span></div>
+      </div>
+      <div class="asset-grid">
+        {{ASSET_CARDS}}
+      </div>
+    </section>
+
+    <section class="section" id="roadmap" data-section-label="GEO 改造路线图">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">05 / ROADMAP</p>
+          <h2>改造路线图</h2>
+          <p class="section-desc">按投入产出比排序的五步计划，每一步都给出可验证的信号，而不是“持续优化”这类空话。</p>
+        </div>
+        <div class="section-stat"><b>5</b><span>个优先级</span></div>
+      </div>
+      <div class="roadmap">
+        {{ROADMAP_ITEMS}}
+      </div>
+    </section>
+
+    <section class="section" id="channels" data-section-label="国内 AI 检索地图">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">06 / CHANNELS</p>
+          <h2>国内 AI 检索地图</h2>
+          <p class="section-desc">国内 AI 不是共用一个检索池，而是各自绑定自家搜索引擎——投放渠道必须跟着检索源走。</p>
+        </div>
+        <div class="section-stat"><b>6</b><span>个国内 AI</span></div>
+      </div>
+      <div class="card table-card">
+        <div class="table-scroll" role="region" aria-label="国内 AI 检索源与投放渠道表" tabindex="0">
+          <table>
+            <caption class="sr-only">国内主流 AI 产品背后的检索源、优先投放渠道与见效周期</caption>
+            <thead>
+              <tr><th scope="col">国内 AI</th><th scope="col">背后检索源</th><th scope="col">优先投放渠道</th><th scope="col">见效周期</th></tr>
+            </thead>
+            <tbody>
+              {{CHANNEL_ROWS}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="insight">
+        <svg class="icon" aria-hidden="true"><use href="#i-target"/></svg>
+        <span><b>核心洞察：</b>{{INSIGHT}}</span>
+      </p>
+    </section>
+
+    <section class="section" id="risks" data-section-label="现状警示">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">07 / RISKS</p>
+          <h2>现状警示</h2>
+          <p class="section-desc">内容存在不等于被采信。以下三处是当前最明显的结构性缺口。</p>
+        </div>
+        <div class="section-stat"><b class="danger">3</b><span>处结构性缺口</span></div>
+      </div>
+      <div class="risk-grid">
+        {{RISK_CARDS}}
+      </div>
+    </section>
+
+    <section class="section" id="faq" data-section-label="FAQ 知识库">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">08 / FAQ</p>
+          <h2>FAQ 知识库</h2>
+          <p class="section-desc">30 条问答覆盖三大产品线与锂电追溯场景，全部可展开、可检索、可复制。FAQ 是 AI 最容易检索和引用的内容形态。</p>
+        </div>
+        <div class="section-stat"><b>{{FAQ_COUNT}}</b><span>条可检索问答</span></div>
+      </div>
+      <div class="faq-toolbar">
+        <div class="chips" role="group" aria-label="按分类筛选 FAQ">
+          {{FAQ_FILTERS}}
+        </div>
+        <button class="btn btn-secondary btn-sm" id="faqToggleAll" type="button" aria-expanded="false">
+          <svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>
+          <span>展开全部</span>
+        </button>
+      </div>
+      <p class="sr-only" id="faqFilterStatus" aria-live="polite"></p>
+      <div class="faq-groups">
+        {{FAQ_GROUPS}}
+      </div>
+    </section>
+
+    <section class="section" id="method" data-section-label="方法、许可与数据">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">09 / METHOD &amp; DATA</p>
+          <h2>方法、许可与数据</h2>
+          <p class="section-desc">指标如何计算、样本如何采集、可以怎么引用，以及这次快照的局限。所有原始材料都以开放格式提供。</p>
+        </div>
+        <div class="section-stat"><b>v{{VERSION}}</b><span>数据版本</span></div>
+      </div>
+
+      <div class="method-grid">
+        <div class="card">
+          <h3 class="card-title">指标定义</h3>
+          <div class="mini-table-wrap">
+            <table class="mini-table">
+              <caption class="sr-only">四项指标的判定方式与本次结果</caption>
+              <thead><tr><th scope="col">指标</th><th scope="col">判定方式</th><th scope="col">本次结果</th></tr></thead>
+              <tbody>{{METHOD_METRICS}}</tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="card-title">检测方法</h3>
+          <ol class="steps">{{METHOD_STEPS}}</ol>
+        </div>
+      </div>
+
+      <div class="method-grid">
+        <div class="card">
+          <h3 class="card-title">局限与解读</h3>
+          <ul class="limit-list">{{LIMITATIONS}}</ul>
+        </div>
+        <div class="card">
+          <h3 class="card-title">版本与勘误</h3>
+          <p class="legacy-note">{{LEGACY_NOTE}}</p>
+          <ul class="changelog">{{CHANGELOG}}</ul>
+        </div>
+      </div>
+
+      <div class="license-card">
+        <div class="license-main">
+          <h3 class="card-title">开放许可与引用</h3>
+          <p>本页的<strong>数据与文字</strong>以 <a href="{{LICENSE_DATA_URL}}" target="_blank" rel="noopener">{{DATA_LICENSE}}</a> 许可发布，<strong>代码</strong>（构建脚本、模板、样式与交互）以 <a href="{{REPO_URL_OR_LICENSE}}">{{CODE_LICENSE}}</a> 许可发布。转载、训练、二次分析均可，请保留来源与快照日期。</p>
+          <div class="license-badges">
+            <span class="license-badge">数据 · {{DATA_LICENSE}}</span>
+            <span class="license-badge">代码 · {{CODE_LICENSE}}</span>
+            <span class="license-badge">非官方排名</span>
+          </div>
+          <div class="citation">
+            <div class="citation-head">
+              <span>引用格式</span>
+              <button class="text-btn" type="button" data-copy-selector="#citationText">复制</button>
+            </div>
+            <p id="citationText">{{CITATION_TEXT}}</p>
+          </div>
+          <details class="bibtex">
+            <summary>BibTeX <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="code-block">
+              <pre id="citationBibtex">{{CITATION_BIBTEX}}</pre>
+              <button class="text-btn" type="button" data-copy-selector="#citationBibtex">复制 BibTeX</button>
+            </div>
+          </details>
+        </div>
+        <aside class="license-aside">
+          <p class="aside-label">开放数据文件</p>
+          <div class="download-grid">
+            {{DOWNLOAD_CARDS}}
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="feedback" data-section-label="建议与修订">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="kicker">10 / FEEDBACK</p>
+          <h2>建议与修订</h2>
+          <p class="section-desc">任何人都可以指出数据错误、补充内容或提出体验改进。建议进入审核队列，由维护者与 AI 助手评估；采纳后直接修改数据、重新构建并记录在这里。</p>
+        </div>
+        <div class="section-stat"><b class="success">{{ACCEPTED_COUNT}}</b><span>条建议已采纳</span></div>
+      </div>
+      <div class="feedback-grid">
+        <div class="card feedback-card">
+          <h3 class="card-title">建议如何被处理</h3>
+          <ol class="feedback-steps">
+            <li><span>01</span><div><b>提交问题与依据</b><p>说明页面位置、具体错误或期望修改；数据类建议请附来源链接，方便核对。</p></div></li>
+            <li><span>02</span><div><b>进入审核队列</b><p>核对数据来源、影响范围与可执行性。无依据的营销改写、攻击性内容会被拒绝。</p></div></li>
+            <li><span>03</span><div><b>采纳即执行</b><p>修改数据或模板 → 重新构建 → 部署上线，并在右侧留下公开记录与版本号。</p></div></li>
+          </ol>
+          <p class="readonly-note">
+            <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
+            <span><b>访客只读，内容安全。</b>任何访客都无法直接修改页面：公开层只提供阅读与建议提交，所有改动只能由维护者审核后执行。</span>
+          </p>
+          <p class="review-rule"><b>审核标准</b>可核对来源 · 影响范围明确 · 不泄露隐私</p>
+          <p class="feedback-note">本地预览服务器会直接写入审核队列；纯静态托管（如 GitHub Pages）会自动改为 GitHub Issue 提交，公开可追踪。</p>
+          <div class="feedback-actions">
+            <button class="btn btn-primary" type="button" data-open-suggest>
+              <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg> 提交修改建议
+            </button>
+            <a class="btn btn-ghost btn-sm" href="#method">查看数据方法 →</a>
+          </div>
+        </div>
+        <div class="card accepted-card">
+          <div class="accepted-head">
+            <h3 class="card-title">最近采纳</h3>
+            <span class="accepted-count">{{ACCEPTED_COUNT}} 条 · 公开记录</span>
+          </div>
+          <div class="accepted-list">
+            {{ACCEPTED_ITEMS}}
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 2.8 27.4 9v14L16 29.2 4.6 23V9Z" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 19.5v-4.2M16 19.5v-9M21.5 19.5v-6.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </span>
+      <div>
+        <strong>{{SITE_SHORT_NAME}}</strong>
+        <p>公开数据 · 可检索 · 可复用</p>
+      </div>
+    </div>
+    <nav class="footer-nav" aria-label="页脚目录">
+      {{FOOTER_NAV_LINKS}}
+    </nav>
+    <div class="footer-meta">
+      <p>© {{YEAR}} {{BRAND_NAME}} · 数据 {{DATA_LICENSE}} · 代码 {{CODE_LICENSE}}</p>
+      <p>数据快照 {{SNAPSHOT_DATE}} · 页面构建 {{PUBLISHED_DATE}} · v{{VERSION}}</p>
+      <p class="footer-disclaimer">AI 回答会随模型、时间与联网结果变化；本页为历史快照，不构成商业排名或采购建议。</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部" hidden>
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+</button>
+
+<dialog class="suggest-dialog" id="suggestDialog" aria-labelledby="suggestTitle" data-repo-url="{{REPO_URL}}">
+  <div class="suggest-shell">
+    <div class="dialog-head">
+      <div>
+        <p class="kicker">FEEDBACK</p>
+        <h2 id="suggestTitle">提交修改建议</h2>
+      </div>
+      <button class="icon-btn" type="button" data-close-dialog aria-label="关闭建议表单">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+    <p class="dialog-lead">数据错误、内容缺失、可访问性问题都欢迎。建议会进入审核队列，采纳的修改会直接更新本页并记入「建议与修订」。</p>
+
+    <form id="suggestForm" novalidate>
+      <div class="field-row">
+        <label class="field">
+          <span>建议类型</span>
+          <select name="type">
+            <option value="数据修正">数据修正</option>
+            <option value="内容补充">内容补充</option>
+            <option value="体验问题">体验问题</option>
+            <option value="其他">其他</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>页面位置 <em>可选</em></span>
+          <input name="location" maxlength="120" placeholder="例如：FAQ · Q12">
+        </label>
+      </div>
+      <label class="field">
+        <span>建议内容 <em>必填</em></span>
+        <textarea name="message" minlength="10" maxlength="1000" rows="5" required placeholder="请描述具体问题、依据与期望的修改（10~1000 字）"></textarea>
+        <span class="counter" id="suggestCounter">0 / 1000</span>
+      </label>
+      <label class="field">
+        <span>联系方式 <em>可选</em></span>
+        <input name="contact" maxlength="120" placeholder="邮箱或微信，仅用于核对建议">
+      </label>
+      <label class="hp" aria-hidden="true">网站地址<input name="website" tabindex="-1" autocomplete="off"></label>
+      <p class="privacy">请勿提交敏感信息。若当前站点为纯静态托管，提交会自动改为 GitHub Issue，内容公开可见。</p>
+      <div class="form-status" id="suggestStatus" role="status" aria-live="polite"></div>
+      <div class="dialog-actions">
+        <button class="btn btn-secondary" type="button" data-close-dialog>取消</button>
+        <button class="btn btn-primary" type="submit" id="suggestSubmit">提交建议</button>
+      </div>
+      <div class="suggest-fallback" id="suggestFallback" hidden>
+        <p id="suggestFallbackText"></p>
+        <div class="fallback-actions">
+          <a class="btn btn-secondary btn-sm" id="suggestGithub" href="#" target="_blank" rel="noopener" hidden>在 GitHub 提交</a>
+          <button class="btn btn-secondary btn-sm" type="button" id="suggestCopy">复制建议内容</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="suggest-success" id="suggestSuccess" hidden>
+      <span class="success-mark" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+      <h3>建议已收到</h3>
+      <p>回执编号 <code id="suggestReceipt"></code></p>
+      <p class="success-note">维护者会核对来源与影响范围；采纳后会直接更新数据与页面，并在「建议与修订」留下公开记录。</p>
+      <button class="btn btn-primary" type="button" data-close-dialog>完成</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>

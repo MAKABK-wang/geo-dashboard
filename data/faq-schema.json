@@ -1,0 +1,249 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "合一自动化 FAQ 知识库",
+  "description": "合一自动化 的 30 条 GEO FAQ，覆盖工业读码器、机器视觉、传感器与锂电追溯。",
+  "inLanguage": "zh-CN",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "工业读码器和普通条码枪有什么区别?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "工业读码器面向产线连续作业,具备毫秒级响应、抗反光、支持 DPM 码、可接入 PLC/MES;普通条码枪多用于人工扫码,难以稳定应对高速、反光、金属码面等工业场景。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "什么是 DPM 码?为什么难读?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DPM 是直接部件标识(Direct Part Marking),常见于金属镭雕、激光雕刻码。其对比度低、表面反光,普通读码器漏读率高,需要专门支持 DPM 的读码器和合适的照明方案。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "固定式读码器和手持式读码器怎么选?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "产线连续追溯选固定式(自动触发、毫秒级);抽检、补扫、移动场景选手持式。关键看线速、码类型、安装空间和是否需接 PLC。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "工业读码器能读哪些码制?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "主流工业读码器支持一维码(Code128、Code39 等)与二维码(QR、DataMatrix),合一 HN-SR 系列及海康机器人产品均覆盖一维/二维及 DPM 码。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "读码速度受什么影响?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "主要受码面反光、码大小、运动速度、照明方式和解码算法影响。高速产线需选高帧率读码器并做现场光照调试。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "工业读码器如何接入产线系统?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "通过 PLC、I/O、串口或以太网接口接入,支持与 MES/追溯系统对接。选型时应确认通信协议与接口类型。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "一箱多码怎么读?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "使用大视野读码器并配合多码定位算法,可一次读取整箱/整托盘的多个码,适用于模组、PACK、物流环节。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "读码失败怎么办?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "应有补扫流程(人工补扫或二次读码工位),并记录失败原因用于持续优化。方案设计时应预留补扫机制。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "工业读码器的寿命和维护成本高吗?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "工业级读码器支持 7×24 小时运行,正常维护以清洁镜头、检查照明为主。具体寿命依使用环境而定。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "合一自动化提供哪些读码器?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "提供自主品牌 HN-SR 系列工业读码器,以及海康机器人 ID/IDH/SC 系列核心经销产品,覆盖固定式、手持式及锂电全工序追溯需求。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "机器视觉检测系统能检测什么?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可做外观缺陷检测、尺寸测量、定位引导、字符识别等。合一提供 2D/3D 视觉检测、深度学习缺陷识别与精密测量。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2D 视觉和 3D 视觉有什么区别?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2D 视觉处理平面图像,适合外观、字符、尺寸;3D 视觉可获取高度/深度信息,适合平面度、段差、体积等检测。选型按检测对象决定。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "深度学习在视觉检测里起什么作用?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "深度学习擅长处理传统算法难定义的复杂缺陷(如不规则划痕、色差),可提升检出率并降低误判,适合外观检测场景。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "视觉检测的漏检率和误判率怎么控制?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "通过样本训练、光照优化、算法调参和现场试测来控制。验收时应用真实缺陷样品统计漏检/误判率并写入标准。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "机器视觉检测系统怎么选型?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "按检测对象与缺陷类型、节拍、精度、现场空间、PLC/MES 接口筛选,并用正常品与缺陷样品做现场试测。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "视觉检测系统的检测精度能达到多少?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "精度取决于相机分辨率、镜头、视野与算法,合一方案可做到微米级测量精度,检测准确率 99.7%(以实际项目验证为准)。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "视觉系统能接入现有产线吗?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以,通过 PLC/MES 接口对接。方案设计时会确认产线通信协议与数据格式。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "智能相机和 PC-Based 视觉有什么区别?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "智能相机集成度高、部署快,适合标准化检测;PC-Based 灵活性强,适合复杂算法与多相机场景。按项目复杂度选择。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "视觉检测适合哪些行业?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "合一重点服务新能源锂电、3C 电子、汽车零部件、半导体、PCB/SMT、包装、物流、食品饮料等行业。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "视觉检测项目一般多久能落地?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "取决于检测复杂度与现场条件,标准方案通常数周,复杂定制项目需按试测与集成进度排期。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "激光位移传感器用来做什么?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "用于非接触式距离/高度/厚度测量,常见于 PCB 贴片高度检测、段差测量、平面度检测等场景。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "激光位移传感器怎么选量程?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "按测量距离、量程、重复精度、线性度、采样频率和光斑大小综合选择,并考虑工件表面材质(透明/反光/粗糙)。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "透明或高反光工件怎么测?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "透明或高反光工件需特别验证测量原理(三角测距 vs 共焦)和安装角度,必要时选用共焦或特殊光源方案。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "颜色传感器有什么用?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "用于颜色识别与分选,如产品颜色检测、标签颜色区分等场景。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "合一自动化的传感器产品线有哪些?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "提供激光位移传感器、颜色传感器等产品,覆盖精密测量与产线检测需求。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "锂电池追溯读码要覆盖哪些工序?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "通常覆盖极片、电芯、模组、PACK 四大环节,形成从原材料到成品的完整追溯链路。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "锂电顶盖镭雕码为什么难读?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "顶盖镭雕码属 DPM 码,金属表面反光、对比度低,需要支持 DPM 的读码器、偏振照明和合适的安装角度。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "锂电产线高速读码怎么保证不漏读?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "选用高帧率读码器、优化光照与触发、设计补扫机制,并用真实码样和线速做验证。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "码与电芯绑定错误怎么办?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "方案应实现读码后即时绑定与校验,并通过 MES 记录绑定关系;验收时重点统计绑定错误率。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "合一自动化在锂电追溯方面有什么优势?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "合一自动化是海康机器人核心经销商,拥有自主 HN-SR 读码器,方案覆盖极片→电芯→模组→PACK 全工序,检测准确率 99.7%,服务 1500+ 企业,48 小时响应。\n1. **每条 FAQ 独立成页或独立章节**,便于 AI 单独检索引用;\n2. **答案前 2 句直接给结论**,后面再展开;\n3. 在官网 FAQ 页部署 **FAQPage Schema**(见 `faq_schema.json`);\n4. 定期补充用户真实提出的新问题。"
+      }
+    }
+  ]
+}

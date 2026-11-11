@@ -1,0 +1,50 @@
+name: 修改建议
+description: 指出数据错误、补充内容或报告体验问题
+title: "[建议] "
+labels: ["suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你帮助这份公开报告变得更准确。数据类建议请附可公开核对的来源链接。
+        本 Issue 内容公开可见，请勿填写个人隐私或商业秘密。
+  - type: dropdown
+    id: type
+    attributes:
+      label: 建议类型
+      options:
+        - 数据修正
+        - 内容补充
+        - 体验问题
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: 页面位置
+      description: 章节、FAQ 编号或链接均可。
+      placeholder: 例如：FAQ · Q12
+  - type: textarea
+    id: message
+    attributes:
+      label: 建议内容
+      description: 请说明具体问题、依据与期望的修改。
+      placeholder: |
+        问题是什么：
+        依据/来源：
+        期望如何修改：
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: 联系方式（可选）
+      description: 仅用于核对建议；填写在 Issue 中即公开可见，建议留空或使用公开邮箱。
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 我理解 Issue 内容公开可见，且不包含敏感信息。
+          required: true

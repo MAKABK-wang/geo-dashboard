@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="GEO 开放仪表盘">
+  <rect width="64" height="64" rx="14" fill="#0b1222"/>
+  <path d="M32 8.5 51.5 19.5v25L32 55.5 12.5 44.5v-25Z" fill="none" stroke="#6d9bff" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M22.5 41V33.5M32 41V23M41.5 41V28.5" stroke="#5ad8ff" stroke-width="4.4" stroke-linecap="round"/>
+</svg>
