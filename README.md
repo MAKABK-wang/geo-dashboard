@@ -1,6 +1,9 @@
-# GEO 可视化仪表盘 · 开放版
+﻿# GEO 可视化仪表盘 · 开放版
 
 把一次完整的生成式引擎优化（GEO）检测，做成**公开、可检索、可复用**的静态站点：5 个工业视觉核心问题的 AI 搜索快照、站点机器可读性审计、30 条 FAQ 知识库、开放数据下载，以及一个可接受访客建议并公开修订记录的反馈闭环。
+
+🌐 **线上地址：https://makabk-wang.github.io/geo-dashboard/**（GitHub Pages 自动部署 · 永久地址）
+🗂️ **仓库：https://github.com/MAKABK-wang/geo-dashboard**（代码 MIT · 数据 CC BY 4.0）
 
 ![GEO 可视化仪表盘社交封面](assets/og-cover.png)
 
@@ -75,20 +78,31 @@ python scripts/serve.py --host 127.0.0.1 --port 8123
 
 ### 审核与执行
 
+**线上站点（GitHub Pages）的建议都进 GitHub Issue（`suggestion` 标签），运营者用 `operate.py` 全权处理：**
+
 ```bash
-# 查看待审核建议（私有收件箱）
+python scripts/operate.py issues                    # 列出待处理建议
+python scripts/operate.py show 3                    # 查看 Issue #3 全文
+python scripts/operate.py accept 3 \
+  --title "补充 2D/3D 视觉选型对比" \
+  --summary "在 FAQ 中新增对比表，并标注适用场景与来源。" \
+  --version 1.1.0                                     # 采纳:记录+重建+推送+关闭 Issue
+python scripts/operate.py reject 3 --reason "缺少可核对的来源"  # 不采纳
+python scripts/operate.py push "更新说明"            # 普通内容更新:构建+提交+推送
+```
+
+- `accept` 会：写入公开记录 → `build.py` 重建 → 提交 → 推送 → GitHub Actions 自动重新部署 → 在 Issue 回复并关闭。全程一条命令，全权运营。
+- 凭据读取顺序：环境变量 `GEO_GITHUB_TOKEN` → 仓库同级 `.tools/gh-token.txt`（本机文件，永不进仓库）。
+- **本地预览模式**（`serve.py`）仍用私有收件箱，命令为 `suggestions.py`：
+
+```bash
+# 本地/自托管模式
 python scripts/suggestions.py list
-
-# 查看完整内容
 python scripts/suggestions.py show SUG-20261111-101500-AB12
-
-# 采纳：写入公开记录（联系方式不会进入公开文件）
 python scripts/suggestions.py accept SUG-... \
   --title "补充 2D/3D 视觉选型对比" \
   --summary "在 FAQ 中新增对比表，并标注适用场景与来源。" \
   --version 1.1.0
-
-# 拒绝：理由留在私有收件箱
 python scripts/suggestions.py reject SUG-... --reason "缺少可核对的来源"
 ```
 
@@ -136,7 +150,8 @@ geo-dashboard/
 ├─ scripts/
 │  ├─ build.py                 # 静态构建 + 校验
 │  ├─ serve.py                 # 预览服务器 + 建议 API
-│  ├─ suggestions.py           # 审核队列 CLI
+│  ├─ suggestions.py           # 本地审核队列 CLI
+│  ├─ operate.py              # 线上运营 CLI(处理 GitHub Issue 建议)
 │  └─ make_assets.py           # 可选的封面生成脚本
 ├─ docs/REVIEW.md              # 建议审核与隐私政策
 ├─ SECURITY.md                 # 安全模型与公网实测记录
